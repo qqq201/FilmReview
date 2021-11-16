@@ -4,15 +4,22 @@ import {dirname} from 'path';
 import {fileURLToPath} from 'url';
 import {Router} from "express";
 import mongoose from 'mongoose';
+import * as path from "path";
+// get the current file path of project
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Middleware
 const app = express();
 app.use(mogan('dev'));
 app.use(express.json());
-app.use(express.static('public'));
 
-// get the current file path of project
-const __dirname = dirname(fileURLToPath(import.meta.url));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
+
+
+app.use(express.static('public'));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 const uri = 'mongodb+srv://reviewfilm:b7EMQHRsTd8XmM5@cluster0.e2shl.mongodb.net/FilmReview?retryWrites=true&w=majority'
 
@@ -30,6 +37,7 @@ const personSchema = new mongoose.Schema({
     city: String,
     role: String
 });
+
 
 async function createPerson() {
 
@@ -54,9 +62,13 @@ async function getPerson() {
     console.log(person);
 }
 
-getPerson();
+// getPerson();
 
 const port = process.env.PORT || 3000;
+
+// app.get('./public/css/styles.css', (req, res) => {
+//     res.sendFile("/public/css/styles.css");
+// })
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:3000`);
