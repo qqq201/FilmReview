@@ -5,6 +5,8 @@ import {fileURLToPath} from 'url';
 import {Router} from "express";
 import mongoose from 'mongoose';
 import * as path from "path";
+import route from './routes/index.js'
+
 // get the current file path of project
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -20,6 +22,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static('public'));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+
+route(app)
 
 const uri = 'mongodb+srv://reviewfilm:b7EMQHRsTd8XmM5@cluster0.e2shl.mongodb.net/FilmReview?retryWrites=true&w=majority'
 
