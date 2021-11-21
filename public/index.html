@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel=script type=text/html href="routes/script.js">
+    <script rel="preload" as ="script" crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/react/16.6.3/umd/react.production.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -46,17 +48,26 @@
 
     <div class="container">
         <div class="carousel">
-            <div>
-                <div class ="carousel-image" style="background-image:url('./Image/Carousel/image1.jpg') "></div>
+            <div class="image">
+                <div class ="carousel-image fade" style="background-image:url('./Image/Carousel/image1.jpg') "></div>
+                <div class ="carousel-image-layer" style="background-image: linear-gradient(transparent, var(--bg-color))") ></div>
+                <div class ="carousel-image fade" style="background-image:url('./Image/Carousel/image2.jpg') "></div>
+                <div class ="carousel-image-layer" style="background-image: linear-gradient(transparent, var(--bg-color))") ></div>
+                <div class ="carousel-image fade" style="background-image:url('./Image/Carousel/image3.jpg') "></div>
                 <div class ="carousel-image-layer" style="background-image: linear-gradient(transparent, var(--bg-color))") ></div>
             </div>
-            <span class="carousel-left">
+            <span class="carousel-left" onclick="plusSlides(-1)">
                        <i class="fas fa-chevron-left"></i>
                     </span>
 
-            <span class="carousel-right">
+            <span class="carousel-right" onclick="plusSlides(1)">
                         <i class="fas fa-chevron-right"></i>
                     </span>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </div>
 
         <div class="galleries-header">
@@ -110,6 +121,34 @@
 
         </div>
     </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("carousel-image");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
     <foooter class="footer"></foooter>
 </div>
 </body>
