@@ -21,7 +21,7 @@ const Gallery = (props) => {
             <div className='container'>
                 <div className="galleries-header">
                     {props.name}
-                    <span class="galleries-header-line"></span>
+                    <span className="galleries-header-line"></span>
                 </div>
                 <div className="galleries">
                     {movies.map(movie => (

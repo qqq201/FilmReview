@@ -5,7 +5,7 @@ import test from '../assets/Image/Carousel/image1.jpg'
 const Carousel = () => {
     return (
         <>
-            <div class="carousel">
+            <div className="carousel">
                 <div>
                     <div className ="carousel-image">
                         <img src={test} alt='carousel'></img>
@@ -24,4 +24,4 @@ const Carousel = () => {
     )
 }
 
-export default Carousel 
+export default Carousel
