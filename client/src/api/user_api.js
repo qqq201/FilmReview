@@ -13,8 +13,8 @@ const userApi = {
         password = '12345'
 
         axiosClient.post(url, {
-          username: username,
-          password: password
+            username: username,
+            password: password
         })
     }
 }

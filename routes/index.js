@@ -1,5 +1,5 @@
-import movie_router from './movie.js'
+//import movie_router from './movie.js'
 
-export default function route(app){
-    app.use('/movie', movie_router)
-}
+//export default function route(app){
+//   app.use('/movie', movie_router)
+//}
