@@ -13,13 +13,13 @@ const Header = () => {
                 </IconContext.Provider>
             </div>
             <ul className="nav-main-header">
-                <li><Link to='/' style={{color:'white'}}>Trang chủ</Link></li>
-                <li><Link to='/ranking' style={{color:'white'}}>Bảng xếp hạng</Link></li>
-                <li><Link to='/news' style={{color:'white'}}>Tin tức</Link></li>
+                <li><Link to='/' style={{color: 'white', textDecoration: 'none'}}>Trang chủ</Link></li>
+                <li><Link to='/ranking' style={{color: 'white', textDecoration: 'none'}}>Bảng xếp hạng</Link></li>
+                <li><Link to='/news' style={{color: 'white', textDecoration: 'none'}}>Tin tức</Link></li>
             </ul>
             <div className="nav-right">
                 <button className="login-btn btn btn--red">
-                    <Link to='/login' style={{color:'white'}}>Đăng nhập</Link>
+                    <Link to='/login' style={{color: 'white', textDecoration: 'none'}}>Đăng nhập</Link>
                 </button>
             </div>
         </nav>
