@@ -1,7 +1,7 @@
 import Carousel from '../../components/carousel/carousel.js'
 import Gallery from '../../components/gallery/gallery.js'
 
-const Home = () => {
+const HomePage = () => {
     return (
         <>
             <Carousel/>
@@ -10,4 +10,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default HomePage;

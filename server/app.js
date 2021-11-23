@@ -9,10 +9,6 @@ import route from './routes/index.js'
 import dotenv from 'dotenv'
 import cors from 'cors'
 
-//if (process.env.NONE_ENV !== 'production'){
-//   dotenv.config({path: '/.env'})
-//}
-
 const DATABASE_URL = 'mongodb+srv://reviewfilm:b7EMQHRsTd8XmM5@cluster0.e2shl.mongodb.net/FilmReview?retryWrites=true&w=majority'
 
 // get the current file path of project

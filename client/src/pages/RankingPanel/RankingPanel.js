@@ -1,4 +1,4 @@
-const Ranking = () => {
+const RankingPage = () => {
     return (
         <>
         <div>Ranking</div>
@@ -6,4 +6,4 @@ const Ranking = () => {
     )
 }
 
-export default Ranking;
+export default RankingPage;

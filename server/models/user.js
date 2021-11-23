@@ -25,13 +25,9 @@ async function createPerson() {
     const result = await person.save();
     console.log(result);
 }
-
-async function getPerson() {
-    const Person = mongoose.model('Person', personSchema);
-    const person = await Person.find({name: 'Nguyễn Nguyễn'}).limit(1).sort({age: -1});
-    console.log(person);
-}
 */
 
-
-export default mongoose.model('users', personSchema)
+export default async function getPerson(name) {
+    const Person = mongoose.model('Person', personSchema);
+    return await Person.find({name: name}).limit(1);
+}

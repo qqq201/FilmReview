@@ -1,13 +1,11 @@
 import mongoose from 'mongoose'
-import userModel from '../models/user.js'
+import getPerson from '../models/user.js'
 
 class UserController {
     // POST /api/user/login
     async login(req, res, next) {
       	const { username, password } = req.body
 
-        console.log(username)
-        console.log(password)
       	// Simple validation
       	if (!username || !password)
       		return res
@@ -16,8 +14,9 @@ class UserController {
 
       	try {
       		// Check for existing user
-      		const user = await userModel.find({name: username}).limit(1)
+      		const user = getPerson(username)
             console.log(user)
+
       		if (!user)
       			return res
       				.status(400)
