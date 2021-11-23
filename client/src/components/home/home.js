@@ -1,5 +1,5 @@
-import Carousel from '../../components/carousel/carousel.js'
-import Gallery from '../../components/gallery/gallery.js'
+import Carousel from '../carousel/carousel.js'
+import Gallery from '../gallery/gallery.js'
 
 const Home = () => {
     return (
