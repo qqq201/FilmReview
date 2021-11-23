@@ -1,20 +1,22 @@
 import Header from '../components/header/header.js'
-import Home from '../pages/home/home.js'
-import Ranking from '../pages/ranking/ranking.js'
-import News from '../pages/news/news.js'
+import HomePage from '../pages/HomePage/HomePage.js'
+import RankingPanel from '../pages/RankingPanel/RankingPanel.js'
+import NewsPage from '../pages/NewsPage/NewsPage.js'
+import MoviePage from '../pages/MoviePage/MoviePage.js'
 import {Route, Routes} from 'react-router-dom'
 
-const HomeRoutes = () => {
+const HomeRoute = () => {
     return (
         <>
             <Header/>
             <Routes>
-                <Route exact path='/*' element={<Home/>}/>
-                <Route exact path='/ranking' element={<Ranking/>}/>
-                <Route exact path='/news' element={<News/>}/>
+                <Route exact path='/*' element={<HomePage/>}/>
+                <Route exact path='/ranking' element={<RankingPanel/>}/>
+                <Route exact path='/news' element={<NewsPage/>}/>
+                <Route exact path='/movie/:id' element={<MoviePage/>}/>
             </Routes>
         </>
     )
 }
 
-export default HomeRoutes
+export default HomeRoute

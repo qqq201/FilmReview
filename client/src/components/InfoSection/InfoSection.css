@@ -1,0 +1,20 @@
+.section {
+    width: 95%;
+    margin: 2%;
+    float: left;
+    color: black;
+}
+
+.section .line {
+    width: 148px;
+    height: 4px;
+    left: 0;
+    top: 130%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background-color: #2DD872;
+}
+
+.section p {
+    font-family: sans-serif;
+}
