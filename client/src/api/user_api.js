@@ -8,10 +8,6 @@ const userApi = {
 
     login: (username, password) => {
         const url = '/user/login'
-
-        username = 'Nguyễn Nguyễn'
-        password = '12345'
-
         axiosClient.post(url, {
             username: username,
             password: password

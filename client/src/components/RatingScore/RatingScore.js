@@ -1,5 +1,4 @@
 import './RatingScore.css'
-import { IconContext } from "react-icons"
 
 const RatingScore = () => {
     return (

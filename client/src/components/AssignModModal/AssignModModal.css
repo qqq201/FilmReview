@@ -1,0 +1,53 @@
+.modal-header {
+    width: 100%;
+    background-color: #F05462;
+}
+
+.titleCloseBtn {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mod-assignment {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin: 10px;
+    align-items: center;
+    padding: 5px;
+}
+
+.mod-assignment > img {
+    width: 10%;
+    height: auto;
+    border-radius: 50px;
+    float: left;
+}
+
+.mod-name {
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.add-mod {
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+input.check-input {
+    transform: scale(2);
+}

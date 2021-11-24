@@ -1,24 +1,24 @@
 import './gallery.css'
-import test from "../assets/Image/Galleries/MoneyHeist.jfif"
-import { AiFillStar } from 'react-icons/ai'
-import { IconContext } from "react-icons"
-import { Link } from "react-router-dom"
+import MovieCatalog from '../MovieCatalog/MovieCatalog.js'
 
 const Gallery = (props) => {
     const movies = [{
         id: "123",
-        name: 'money heist',
+        title: 'money heist',
         year: '2017-2012',
         genres: 'action, crime',
         score: 80
 
     },{
         id: "456",
-        name: 'money heist',
+        title: 'money heist',
         year: '2017-2012',
         genres: 'action, crime',
         score: 80
     }]
+
+    const role = 'admin'
+    const isAuthen = true
 
     return (
         <>
@@ -29,26 +29,11 @@ const Gallery = (props) => {
                 </div>
                 <div className="galleries">
                     {movies.map(movie => (
-                        <div className="gallerties-item">
-                            <img src={test} alt="poster"/>
-                            <div className="item-info">
-                                <h2 className="item-name">{movie.name}</h2>
-                                <p className="item-year">{movie.year}</p>
-                                <p className="item-topic">{movie.genres}</p>
-                                <div className="item-rating">
-                                    <IconContext.Provider value={{ color: "#D89E2D" }}>
-                                    <AiFillStar/>
-                                    </IconContext.Provider>
-                                    <span className="Aggregate-ratting">{movie.score}</span>
-                                    <span> / 100</span>
-                                </div>
-                                <div className="more-info-btn btn btn--red btn--border-radius">
-                                    <Link to={'movie/' + movie.id} style={{color: 'white', textDecoration: 'none'}}>
-                                    Xem thêm
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
+                        <MovieCatalog
+                            movie={movie}
+                            role={role}
+                            isAuthen={isAuthen}
+                        />
                     ))}
                 </div>
             </div>

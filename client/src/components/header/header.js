@@ -1,7 +1,7 @@
 import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
-import {Link} from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Header = () => {
     return (
@@ -13,9 +13,9 @@ const Header = () => {
                 </IconContext.Provider>
             </div>
             <ul className="nav-main-header">
-                <li><Link to='/' style={{color: 'white', textDecoration: 'none'}}>Trang chủ</Link></li>
-                <li><Link to='/ranking' style={{color: 'white', textDecoration: 'none'}}>Bảng xếp hạng</Link></li>
-                <li><Link to='/news' style={{color: 'white', textDecoration: 'none'}}>Tin tức</Link></li>
+                <li><NavLink to='/' style={{color: 'white', textDecoration: 'none'}}>Trang chủ</NavLink></li>
+                <li><NavLink to='/ranking' style={{color: 'white', textDecoration: 'none'}}>Bảng xếp hạng</NavLink></li>
+                <li><NavLink to='/news' style={{color: 'white', textDecoration: 'none'}}>Tin tức</NavLink></li>
             </ul>
             <div className="nav-right">
                 <button className="login-btn btn btn--red">
