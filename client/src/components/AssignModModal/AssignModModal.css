@@ -1,3 +1,8 @@
+.assign-mod-modal {
+    width: 80%;
+    height: 500px;
+}
+
 .modal-header {
     width: 100%;
     background-color: #F05462;
@@ -50,4 +55,27 @@
 
 input.check-input {
     transform: scale(2);
+}
+
+.mod-search{
+    width: 80%;
+    position: relative;
+}
+
+.mod-search input {
+    padding-left: 48px;
+    height: 60px;
+    width: 100%;
+    background: #FFFFFF;
+    border:none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.mod-search-icon{
+    position: absolute;
+    font-size: 30px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
 }
