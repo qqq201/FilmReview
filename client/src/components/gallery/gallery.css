@@ -1,17 +1,17 @@
-.container{
+.gallery{
     height: 100%;
     padding-top: 100px;
     margin: 0 186px;
 }
 
-.galleries{
+.catalogs{
     display: flex;
     justify-content: flex-start;
     margin-right: -33px;
     flex-wrap: wrap ;
 }
 
-.galleries-header{
+.gallery-header{
     display: block;
     font-family: 'Play', sans-serif;
     font-style: normal;
@@ -22,7 +22,8 @@
     margin-bottom: 36px;
     position: relative;
 }
-.galleries-header-line{
+
+.gallery-header-line{
     position: absolute;
     width: 148px;
     height: 4px;
@@ -30,4 +31,3 @@
     top: 130%;
     background-color: #2DD872;
 }
-
