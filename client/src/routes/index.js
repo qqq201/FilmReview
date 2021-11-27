@@ -1,5 +1,5 @@
 import HomeRoute from './home.js'
-import LoginPage from '../pages/LoginPage/LoginPage.js'
+import LoginPage from '../pages/LoginPage/LoginPage.jsx'
 
 import {Route, Routes} from 'react-router-dom'
 
