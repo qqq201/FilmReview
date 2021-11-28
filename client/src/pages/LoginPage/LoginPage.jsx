@@ -1,5 +1,5 @@
 import {Button, Col, Container, Form, Row} from 'react-bootstrap';
-import './loginPage..css'
+import './loginPage.css'
 
 const LoginPage = () => {
     return (
@@ -99,8 +99,6 @@ const LoginPage = () => {
                         </Container>
                     </div>
                 </div>
-
-
             </div>
         </div>
 
