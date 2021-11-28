@@ -6,7 +6,10 @@ const articleSchema = new mongoose.Schema({
     content : String,
     thumbnail : String,
     articleLink: String,
-    time : Date
+    time : {
+        type : Date,
+        default : Date.now
+    }
 }, {collection : 'article'});
 const articleModel = mongoose.model('Article', articleSchema);
 

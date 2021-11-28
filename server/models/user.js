@@ -1,8 +1,14 @@
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
-    userId: String,
-    password: String,
+    userId: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
     role: String,
     name: String,
     email: String,
@@ -10,11 +16,18 @@ const userSchema = new mongoose.Schema({
     gender: String,
     city: String,
     favoriteList: [{
-        String
+        moviedId: String
     }],
-    level: Number,
+
+    level: {
+        Number,
+        default: 0
+    },
+
     Point: Number,
-    releasedDate: Date,
+    releasedDate: {
+        type: Date,
+    },
     notification: [{
         content: String,
         state: Number,
@@ -23,7 +36,7 @@ const userSchema = new mongoose.Schema({
     }],
     assignedMovie: [{
         moviedbId: String,
-    }] // movieId
+    }]
 
 }, {collection: 'user'});
 const userModel = mongoose.model('User', userSchema);

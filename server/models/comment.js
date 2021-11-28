@@ -5,7 +5,10 @@ const commentSchema = new mongoose.Schema({
     userId : String,
     reviewId : String,
     content : String,
-    time : String
+    time : {
+        type : Date,
+        default : Date.now()
+    }
 }, {collection : 'comment'});
 const commentModel = mongoose.model('Comment', commentSchema);
 

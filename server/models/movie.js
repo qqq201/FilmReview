@@ -11,18 +11,30 @@ const movieSchema = new mongoose.Schema({
     actors: [String],
     director: [String],
     rateScore : {
-        user_score : Number,
+        user_score : {
+            type : Number,
+            default : 0
+        },
     },
     photos : [String],
     reviews : [{
         user_id : String,
         user_name : String,
         user_photo : String,
-        user_score : Number,
+        user_score : {
+            type : Number,
+            default : 0
+        },
         content : String,
-        created_at : Date,
+        created_at : {
+            Date,
+            default : Date.now
+        }
     }],
-    favoriteCount : Number,
+    favoriteCount : {
+        type : Number,
+        default : 0
+    },
     moderator : [String],
 
 }, {collection : 'movie'});
