@@ -1,7 +1,9 @@
-.container{
+.favorite{
     height: 100%;
+    width: 1062px;
     padding-top: 100px;
     margin: 0 186px;
+    background-color: white;
 }
 
 .galleries{

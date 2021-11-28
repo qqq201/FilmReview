@@ -1,7 +1,7 @@
-import './gallery.css'
+import './favorite.css'
 import MovieCatalog from '../MovieCatalog/MovieCatalog.js'
 
-const Gallery = (props) => {
+const  Favorite= (props) => {
     const movies = [{
         id: "123",
         title: 'money heist',
@@ -22,7 +22,7 @@ const Gallery = (props) => {
 
     return (
         <>
-            <div className='container'>
+            <div className='favorite'>
                 <div className="galleries-header">
                     {props.name}
                     <span className="galleries-header-line"></span>
@@ -41,4 +41,4 @@ const Gallery = (props) => {
     )
 }
 
-export default Gallery
+export default  Favorite

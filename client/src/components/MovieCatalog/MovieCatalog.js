@@ -1,3 +1,4 @@
+import test from "../assets/Image/Galleries/MoneyHeist.jfif"
 import AssignModModal from '../AssignModModal/AssignModModal.js'
 import { AiFillStar } from 'react-icons/ai'
 import { IconContext } from "react-icons"
@@ -9,10 +10,10 @@ const MovieCatalog = (props) => {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	return (
-        <div className="catalog">
+        <div className="gallerties-item">
 			<AssignModModal isOpen={modalOpen} setOpenModal={setModalOpen} movie_id={props.movie.id}/>
 
-            <img src={props.movie.poster} alt="poster"/>
+            <img src={test} alt="poster"/>
             <div className="item-info">
                 <h2 className="item-name">{props.movie.title}</h2>
                 <p className="item-year">{props.movie.year}</p>
@@ -24,7 +25,7 @@ const MovieCatalog = (props) => {
                     <span className="Aggregate-ratting">{props.movie.score}</span>
                     <span> / 100</span>
                 </div>
-                <div className='btns-container'>
+                <div className='test'>
 	                <div className="more-info-btn">
 	                    <Link to={'movie/' + props.movie.id} style={{color: 'white', textDecoration: 'none'}}>
 	                    Xem thêm

@@ -1,6 +1,6 @@
-.catalog{
+.gallerties-item{
     display: flex;
-    width: 28%;
+    width: 30%;
     height: 262.5px;
     flex-wrap: wrap;
     border-radius: 20px;
@@ -10,9 +10,9 @@
     margin-right: 33px;
 }
 
-.catalog img {
-    width: 50%;
-    height: auto;
+.gallerties-item img {
+    width: 175px;
+    height: 262.5px;
 }
 
 .item-info{
@@ -80,13 +80,12 @@
 
 .btn-assign-mod {
 	width: 25%;
-    height: 100%;
 	background-color: #2D3E50;
 	color: white;
 	border-radius: 50px;
 }
 
-.btns-container {
+.test {
 	display: flex;
     height: 35px;
 }
