@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.title {
+.movie-title {
     margin-top: 110px;
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
@@ -17,14 +17,14 @@
     color: white;
 }
 
-.title  .name {
+.movie-title .movie-name {
     margin-right: 2%;
     margin-left: 2%;
     font-weight: bold;
     font-size: 35px;
 }
 
-.title .year {
+.movie-title .movie-year {
     font-size: 18px;
 }
 
