@@ -1,49 +1,48 @@
-import mongoose from 'mongoose'
 import UserModel from '../models/user.js'
 
 class UserController {
     // POST /api/user/login
     async login(req, res, next) {
-      	const { username, password } = req.body
+        const {username, password} = req.body
 
-      	// check if username and password is none
-      	if (!username || !password)
-      		return res.status(400).json({ success: false, message: 'Missing username and/or password' })
+        // check if username and password is none
+        if (!username || !password)
+            return res.status(400).json({success: false, message: 'Missing username and/or password'})
 
-      	try {
-      		// Check for existing user
-      		const user = await UserModel.find({name: username}).limit(1)
+        try {
+            // Check for existing user
+            const user = await UserModel.find({name: username}).limit(1)
 
-      		if (user.length === 0)
-      			return res.status(400).json({ success: false, message: 'Incorrect username or password' })
+            if (user.length === 0)
+                return res.status(400).json({success: false, message: 'Incorrect username or password'})
 
-      		// Username found
-      		if (user[0].password !== password)
-      			return res.status(400).json({ success: false, message: 'Incorrect username or password' })
+            // Username found
+            if (user[0].password !== password)
+                return res.status(400).json({success: false, message: 'Incorrect username or password'})
             else {
-                return res.status(200).json({ success: true, message: 'congrats' })
+                return res.status(200).json({success: true, message: 'congrats'})
             }
-      	} catch (error) {
-      		console.log(error)
-      		res.status(500).json({ success: false, message: 'Internal server error' })
-      	}
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
     }
 
     //POST /api/user/signup
-    async signup(req, res, next){
+    async signup(req, res, next) {
         // implement here
-        return res.status(200).json({ success: true, message: 'congrats' })
+        return res.status(200).json({success: true, message: 'congrats'})
     }
 
     //POST /api/user/update
-    async update(req, res, next){
+    async update(req, res, next) {
         // implement here
-        return res.status(200).json({ success: true, message: 'congrats' })
+        return res.status(200).json({success: true, message: 'congrats'})
     }
 
     //GET /api/user/:id/view
-    async view(req, res, next){
-        return res.status(200).json({ success: true, message: 'congrats' })
+    async view(req, res, next) {
+        return res.status(200).json({success: true, message: 'congrats'})
     }
 }
 
