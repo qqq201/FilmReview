@@ -27,15 +27,15 @@ const NewsPage = () => {
         <div className='gallery'>
             <div className="news">
                 <div className="new-1" >
-                    <picture>
+                    <div className='new-photo'>
                         <img src={News[0].Photos}
-                            width="250" height="200"
+                             width="250" height="200"
                         >
                         </img>
-                    </picture>
+                    </div>
                     <div className="post-wrapper">
-                        <h2 className='post-title-link'>
-                            <a href={News[0].Link}>
+                        <h2 className='post-title-link' color= 'black'>
+                            <a href={News[0].Link} >
                                 {News[0].Title}
                             </a>
                         </h2>
