@@ -1,0 +1,148 @@
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+* {
+    box-sizing: border-box
+
+}
+
+.background {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.image-background {
+    height: 100vh;
+    width: 100vw;
+    background: url("https://www.figma.com/file/d0hm82NIMDVSdmtDHIHlXy/image/25d7bc390c2b0aea21ec8f12090804ab7124d648?fuid=1039888245410511885");
+    object-fit: cover;
+}
+
+
+.rectangle-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: end;
+}
+
+
+.rectangle {
+    display: flex;
+    height: 100vh;
+    width: 40%;
+    background: #E8EDF1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2D3E50;
+    padding: 2rem;
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-input, .password-input {
+
+    width: 95%;
+    height: 5rem;
+    border: 0.15rem solid #000000;
+    font-size: 1.5rem;
+    color: #aD3E50;
+    padding-left: 1rem;
+    border-radius: 10px;
+    background-color: #E8EDF1;
+}
+
+horizontal-line{
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    background-color: black;
+    width: 90%;
+}
+
+.login-btn-custom {
+    border-radius: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    width: 35%;
+    height: 4.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    background: #2DD872;
+    color: #FFFFFF;
+    border: 0.1rem solid #2DD872;
+    text-align: center;
+
+
+}
+
+.button-link, .button-link:hover{
+    color: white;
+    text-decoration: none;
+
+}
+
+.cancel-btn-custom{
+    border-radius: 2rem;
+    width: 35%;
+    height: 4.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #F05462;
+    border: 0.1rem solid #F05462;
+    text-align: center;
+}
+
+
+
+.relative-header {
+    position: relative;
+    top: -11rem;
+    left: 13rem;
+    font-size: 4rem;
+    color: #2DD872;
+    font-weight: bold;
+}
+
+
+
+.form-group {
+    height: 40rem;
+    width: 40rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.signup-form {
+    width: 90%;
+    font-size: 1.8rem;
+    color : #000000;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 350;
+}
+
+.signup-font {
+    color: black;
+    font-weight: 300;
+}
+
+
+
