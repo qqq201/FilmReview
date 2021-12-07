@@ -3,7 +3,7 @@ import mogan from 'morgan';
 import mongoose from 'mongoose';
 import route from './routes/index.js'
 import cors from 'cors'
-//import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 
 const DATABASE_URL = 'mongodb+srv://reviewfilm:b7EMQHRsTd8XmM5@cluster0.e2shl.mongodb.net/FilmReview?retryWrites=true&w=majority'
 
