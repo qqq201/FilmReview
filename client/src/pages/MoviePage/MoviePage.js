@@ -2,6 +2,7 @@ import './MoviePage.css'
 import MovieHeader from '../../components/MovieHeader/MovieHeader.js'
 import MovieInfo from '../../components/MovieInfo/MovieInfo.js'
 import Review from "../../components/Review/Review";
+import PostReview from "../../components/PostReview/PostReview";
 
 
 const MoviePage = () => {
@@ -10,7 +11,10 @@ const MoviePage = () => {
             <MovieHeader/>
             <MovieInfo/>
             <div>
-            <Review/>
+                <Review/>
+            </div>
+            <div>
+                <PostReview/>
             </div>
         </div>
     )

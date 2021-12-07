@@ -1,6 +1,6 @@
 import './Review.css'
 import '../../pages/LoginPage/Login.css'
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import $ from 'jquery'
 
 

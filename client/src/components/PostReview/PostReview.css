@@ -1,0 +1,20 @@
+.image-border {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text-float {
+    float: left;
+    text-align: left;
+}
+
+.card {
+    border-radius: 2rem;
+}
+
+.num-reviews {
+    font-size: 2rem;
+    font-weight: bold;
+}

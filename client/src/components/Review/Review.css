@@ -74,6 +74,7 @@ html {
     background: white;
     border-radius: 2rem;
     left: 12rem;
+    z-index: 9999;
 }
 
 .input-text-area {
