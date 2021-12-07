@@ -7,7 +7,7 @@ const NewsPage = () => {
         Date: "1/1/2021",
         Link: "https://vnexpress.net/kich-ban-kinh-te-toan-cau-khi-xuat-hien-omicron-4396317.html",
         Photos: "https://vcdn-kinhdoanh.vnecdn.net/2021/11/30/1x-1-jpeg-9944-1638235172.jpg",
-        PostExcerpt: "Biến chủng nCoV mới giáng đòn vào kỳ vọng phục hồi nhanh trong năm tới, nhưng mức độ ảnh hưởng có thể không quá nghiêm trọng."
+        PostExcerpt: "Biến chủng nCoV mới giáng đòn vào kỳ vọng phục hồi nhanh trong năm tới, nhưng mức độ ảnh hưởng có thể không quá nghiêm trọng. "
     },{
         Title: "MeowMeow",
         Date: "2/1/2021",
@@ -26,12 +26,9 @@ const NewsPage = () => {
     return (
         <div className='gallery'>
             <div className="news">
-                <div className="new-1" >
-                    <div className='new-photo'>
-                        <img src={News[0].Photos}
-                             width="250" height="200"
-                        >
-                        </img>
+                <div className="news-item" >
+                    <div className='news-photo'>
+                        <img src={News[0].Photos}/>
                     </div>
                     <div className="post-wrapper">
                         <h2 className='post-title-link' color= 'black'>
@@ -39,8 +36,8 @@ const NewsPage = () => {
                                 {News[0].Title}
                             </a>
                         </h2>
-                        <span className="post-card-tag">{News[0].Date}</span>
-                        <div className="post-excerpt">
+                        <span className="post-date">{News[0].Date}</span>
+                        <div className="post-excerpt line-clamp">
                             {News[0].PostExcerpt}
                         </div>
                     </div>
