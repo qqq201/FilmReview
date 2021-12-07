@@ -1,4 +1,4 @@
-import "../Login/Login.css"
+import "../LoginPage/Login.css"
 import "./SignUp.css"
 import {useNavigate} from "react-router-dom";
 import $ from "jquery";
