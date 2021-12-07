@@ -45,7 +45,9 @@ html {
     color: #2D3E50;
     padding: 2rem;
 }
-
+.title-header-green {
+    color: #2DD872;
+}
 .form-input {
     display: flex;
     justify-content: center;
@@ -58,7 +60,7 @@ html {
     height: 5rem;
     border: 0.15rem solid #000000;
     font-size: 1.5rem;
-    color: #aD3E50;
+    color: black;
     padding-left: 1rem;
     border-radius: 10px;
     background-color: #E8EDF1;
@@ -145,4 +147,38 @@ hr {
 }
 
 
+.prompt {
+    position: absolute;
+    top: 20em;
+    left: 40rem;
+    height: 35% !important;
+    z-index: 9999;
+}
 
+
+.wrapper-content {
+    height: 100%;
+    width: 100%;
+
+}
+
+.content-prompt {
+    padding-left : 12rem;
+    font-size: 2rem;
+    color: #000000;
+}
+
+#off {
+    height: 1rem;
+}
+
+.header-error {
+    margin-left: 1rem;
+    font-size: 3rem;
+    color: #F05462;
+    margin-bottom: 3rem;
+}
+
+.error-message {
+    transition: 1s;
+}
