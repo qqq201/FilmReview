@@ -1,0 +1,50 @@
+.form-group {
+    height: 100%;
+    width: 50rem;
+}
+
+.relative-header {
+    position: relative;
+    top: -1rem;
+    left: 13rem;
+}
+
+
+.dropdown-gender {
+    width: 99.5%;
+    padding-left: 2rem;
+    border-radius: 1rem;
+    height: 4.2rem;
+}
+
+
+#label-email, #label-city, #label-date, .label-gender, #label-password, .label-password {
+    display: inline;
+    color: #010000;
+    margin-left: 2rem;
+    font-size: 2rem;
+
+}
+
+#label-email:after, .label-password:after{
+    display: inline;
+    content:  "  (*)";
+    color: #F05462;
+}
+
+.password-input, .email-input {
+    margin-left: 2rem;
+}
+
+.Dropdown {
+    width: 99%;
+
+    padding-left: 2rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.03rem;
+    font-size: 1.4rem;
+    height: 4.8rem;
+    background: #e8edf1;
+    color: #010000;
+    border-radius: 1rem;
+}
