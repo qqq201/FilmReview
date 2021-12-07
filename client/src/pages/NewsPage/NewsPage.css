@@ -1,0 +1,35 @@
+.new-page {
+    height: 2000px;
+    width: 76%;
+    margin-left: 12%;
+    margin-right: 12%;
+    background-color: #E8EDF1;
+}
+
+.new-1 {
+    color: black;
+    background: #E8EDF1;  
+    display: flex;
+    align-items: center;
+}
+
+.new-photo{
+    width: 400px;
+    height: 224.96px;
+    left: 201px;
+    top: 125px;
+    display: flex;
+    align-items: center;
+}
+
+.post-wrapper {
+    height: 191px;
+    width: 580px;
+    left: 619px;
+    top: 139px;
+    
+}
+
+.post-wrapper h2.post-title-link {
+    color: black;
+}
