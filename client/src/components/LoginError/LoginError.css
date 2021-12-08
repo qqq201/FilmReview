@@ -1,0 +1,35 @@
+.prompt {
+    position: absolute;
+    top: 20em;
+    left: 40rem;
+    height: 35% !important;
+    z-index: 9999;
+}
+
+
+.wrapper-content {
+    height: 100%;
+    width: 100%;
+
+}
+
+.content-prompt {
+    padding-left : 12rem;
+    font-size: 2rem;
+    color: #000000;
+}
+
+#off {
+    height: 1rem;
+}
+
+.header-error {
+    margin-left: 1rem;
+    font-size: 3rem;
+    color: #F05462;
+    margin-bottom: 3rem;
+}
+
+.error-message {
+    transition: 1s;
+}

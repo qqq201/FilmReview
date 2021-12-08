@@ -1,6 +1,6 @@
 import HomeRoute from './home.js'
-import Login from '../pages/LoginPage/Login.jsx'
-import SignUp from "../pages/SignupPage/SignUp.jsx";
+import LoginPage from '../pages/LoginPage/LoginPage.jsx'
+import SignupPage from "../pages/SignupPage/SignupPage.jsx";
 
 
 import {Route, Routes} from 'react-router-dom'
@@ -10,8 +10,8 @@ const Router = () => {
     return (
         <Routes>
             <Route path='/*' element={<HomeRoute/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/signup' element={<SignUp/>}/>
+            <Route path='/login' element={<LoginPage/>}/>
+            <Route path='/signup' element={<SignupPage/>}/>
         </Routes>
     )
 }

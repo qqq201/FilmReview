@@ -1,39 +1,25 @@
-html {
-    font-size: 62.5%;
-    font-family: "Poppins", sans-serif;
-}
-
-* {
-    box-sizing: border-box
-
-}
-
-.background {
-    background-color: white;
-    font-family: "Poppins", sans-serif;
-}
-
-.image-background {
-    height: 100vh;
-    width: 100vw;
-    background: url("https://www.figma.com/file/d0hm82NIMDVSdmtDHIHlXy/image/25d7bc390c2b0aea21ec8f12090804ab7124d648?fuid=1039888245410511885");
-    object-fit: cover;
-}
-
-
 .rectangle-box {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: end;
+    overflow: hidden;
 }
 
+.form-wrapper {
+    height: 200vh;
+    margin-top: -80px;
+    margin-right: -50px;
+    padding-top: 200px;
+    padding-right: 100px;
+    width: 50%;
+    transform: rotate(14deg);
+    background: #E8EDF1;
+}
 
 .rectangle {
     display: flex;
-    height: 100vh;
-    width: 40%;
-    background: #E8EDF1;
+    transform: rotate(-14deg);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -66,10 +52,7 @@ html {
     background-color: #E8EDF1;
 }
 
-horizontal-line{
-}
-
-hr {
+.form-group > hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
     border: 0;
@@ -90,8 +73,6 @@ hr {
     color: #FFFFFF;
     border: 0.1rem solid #2DD872;
     text-align: center;
-
-
 }
 
 .button-link, .button-link:hover{
@@ -112,8 +93,6 @@ hr {
     text-align: center;
 }
 
-
-
 .relative-header {
     position: relative;
     top: -11rem;
@@ -122,8 +101,6 @@ hr {
     color: #2DD872;
     font-weight: bold;
 }
-
-
 
 .form-group {
     height: 40rem;
@@ -144,41 +121,4 @@ hr {
 .signup-font {
     color: black;
     font-weight: 300;
-}
-
-
-.prompt {
-    position: absolute;
-    top: 20em;
-    left: 40rem;
-    height: 35% !important;
-    z-index: 9999;
-}
-
-
-.wrapper-content {
-    height: 100%;
-    width: 100%;
-
-}
-
-.content-prompt {
-    padding-left : 12rem;
-    font-size: 2rem;
-    color: #000000;
-}
-
-#off {
-    height: 1rem;
-}
-
-.header-error {
-    margin-left: 1rem;
-    font-size: 3rem;
-    color: #F05462;
-    margin-bottom: 3rem;
-}
-
-.error-message {
-    transition: 1s;
 }

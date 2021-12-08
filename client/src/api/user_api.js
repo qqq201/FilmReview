@@ -6,10 +6,10 @@ const userApi = {
         return axiosClient.get(url)
     },*/
 
-    login: (username, password) => {
+    login: (email, password) => {
         const url = '/user/login'
-        axiosClient.post(url, {
-            username: username,
+        return axiosClient.post(url, {
+            email: email,
             password: password
         })
     }

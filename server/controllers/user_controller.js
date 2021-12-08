@@ -3,15 +3,15 @@ import UserModel from '../models/user.js'
 class UserController {
     // POST /api/user/login
     async login(req, res, next) {
-        const {username, password} = req.body
+        const {email, password} = req.body
 
         // check if username and password is none
-        if (!username || !password)
+        if (!email || !password)
             return res.status(400).json({success: false, message: 'Missing username and/or password'})
 
         try {
             // Check for existing user
-            const user = await UserModel.find({name: username}).limit(1)
+            const user = await UserModel.find({email: email}).limit(1)
 
             if (user.length === 0)
                 return res.status(400).json({success: false, message: 'Incorrect username or password'})
@@ -20,7 +20,7 @@ class UserController {
             if (user[0].password !== password)
                 return res.status(400).json({success: false, message: 'Incorrect username or password'})
             else {
-                return res.status(200).json({success: true, message: 'congrats'})
+                return res.status(200).json({success: true, user: user[0]})
             }
         } catch (error) {
             console.log(error)
