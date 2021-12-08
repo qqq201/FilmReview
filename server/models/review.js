@@ -2,16 +2,9 @@ import mongoose from 'mongoose'
 
 const reviewSchema = new mongoose.Schema({
     id: String,
-    moviedId: String,
+    movieId: String,
     userId: String,
-    commments: [{
-        comment_id: String,
-        content: String,
-        date: {
-            type: Date,
-            default: Date.now
-        }
-    }],
+    commentId: [String],
     numberOfComments: {
         type: Number,
         default: 0

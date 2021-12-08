@@ -25,18 +25,14 @@ const userSchema = new mongoose.Schema({
     },
 
     Point: Number,
-    releasedDate: {
-        type: Date,
-    },
+    releasedDate: Date,
     notification: [{
         content: String,
         state: Number,
         image: String,
         earn: Number
     }],
-    assignedMovie: [{
-        moviedbId: String,
-    }]
+    assignedMovie: [String]
 
 }, {collection: 'user'});
 const userModel = mongoose.model('User', userSchema);
