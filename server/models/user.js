@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    image: String,
     role: String,
     name: String,
     email: String,
