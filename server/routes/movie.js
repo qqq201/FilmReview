@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import movie_controller from '../controllers/movie_controller.js'
+import MovieController from '../controllers/movie_controller.js'
 
 const router = Router()
+router.use('/gallery', MovieController.getGallery);
 
-export default router.use('/', movie_controller.index)
 
-
+export default router
