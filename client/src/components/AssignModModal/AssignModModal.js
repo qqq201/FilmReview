@@ -83,9 +83,8 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
                     else if (mod.email.toLowerCase().includes(state.searchMod.toLowerCase()))
                         return true
                     return false
-                }
-                ).map((moderator, index) => (
-                    <div className='mod'>
+                }).map((moderator, index) => (
+                    <div className='mod' key={index}>
                         <img src={moderator.avatar_url} alt='mod avatar'/>
 
                         <div className='mod-name'>{moderator.name}</div>

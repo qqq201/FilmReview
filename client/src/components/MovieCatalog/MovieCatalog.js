@@ -7,6 +7,7 @@ import './MovieCatalog.css'
 
 const MovieCatalog = (props) => {
 	const [modalOpen, setModalOpen] = useState(false);
+    const user = localStorage.getItem('User') || {}
 
 	return (
         <div className="catalog">
@@ -30,7 +31,7 @@ const MovieCatalog = (props) => {
 	                    Xem thêm
 	                    </Link>
 	                </div>
-		            {props.role === 'admin' && props.isAuthen &&
+		            {user && user.role === 'admin' &&
 		            	<button className='btn-assign-mod' onClick={() => {setModalOpen(true)}}>+</button>}
 	            </div>
 	        </div>

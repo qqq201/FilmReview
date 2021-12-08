@@ -32,25 +32,23 @@ export default function Slider() {
     return (
         <div className="carousel">
         <div className="container-slider ">
-            {dataSlider.map((obj, index) => {
-                return (
-                    <div
-                        key={obj.id}
-                        className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
-                        <img src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} alt='banner'/>
-                    </div>
-                )
-            })}
+            {dataSlider.map((obj, index) => (
+                <div
+                    key={index}
+                    className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
+                    <img src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} alt='banner'/>
+                </div>
+            ))}
             <div className ="carousel-image-layer"></div>
             <BtnSlider moveSlide={nextSlide} direction={"next"} />
             <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
 
             <div className="container-dots">
                 {Array.from({length: 5}).map((item, index) => (
-                    <div
-                    onClick={() => moveDot(index + 1)}
-                    className={slideIndex === index + 1 ? "dot active" : "dot"}
-                    ></div>
+                    <div key = {index}
+                        onClick={() => moveDot(index + 1)}
+                        className={slideIndex === index + 1 ? "dot active" : "dot"}>
+                    </div>
                 ))}
             </div>
 

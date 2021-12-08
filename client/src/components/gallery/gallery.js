@@ -19,9 +19,6 @@ const Gallery = (props) => {
         score: 80
     }]
 
-    const role = 'admin'
-    const isAuthen = true
-
     return (
         <div className='gallery'>
             <div className="gallery-header">
@@ -29,12 +26,8 @@ const Gallery = (props) => {
                 <span className="gallery-header-line"></span>
             </div>
             <div className="catalogs">
-                {movies.map(movie => (
-                    <MovieCatalog
-                        movie={movie}
-                        role={role}
-                        isAuthen={isAuthen}
-                    />
+                {movies.map((movie, index) => (
+                    <MovieCatalog movie={movie} key={index}/>
                 ))}
             </div>
         </div>

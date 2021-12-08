@@ -27,8 +27,10 @@ const LoginForm = ({setError}) => {
     const validate = async () => {
         try {
             const response = await userApi.login(state.email, state.password)
-            if (response !== undefined && response.success === true)
-                console.log(response)
+            if (response !== undefined && response.success === true){
+                localStorage.setItem('User', JSON.stringify(response.user))
+                navigate('/')
+            }
             else
                 setError(true)
         } catch (error){
@@ -50,7 +52,7 @@ const LoginForm = ({setError}) => {
                             <form className="form-input d-flex flex-column target">
                                 <input type="text" className="email-input mb-4" placeholder="Email" autoComplete
                                        autoFocus name="email" onChange={(event) => {setEmail(event)}}/>
-                                <input type="password" className="password-input" placeholder="Mật khẩu "
+                                <input type="password" className="password-input" placeholder="Mật khẩu"
                                        name="password" onChange={(event) => {setPassword(event)}}/>
                                 <button className="submit-button" hidden/>
                             </form>

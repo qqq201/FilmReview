@@ -5,7 +5,7 @@ import rightArrow from "./icons/OIP1.svg";
 //import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
 
 export default function BtnSlider({ direction, moveSlide }) {
-  console.log(direction, moveSlide);
+    
   return (
     <span
       onClick={moveSlide}
