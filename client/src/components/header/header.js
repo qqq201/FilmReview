@@ -2,9 +2,13 @@ import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
 import { NavLink, Link } from 'react-router-dom'
+import RightMenu from '../RightMenu/RightMenu.js'
 
 const Header = () => {
-    const user = JSON.parse(localStorage.getItem('User') || "")
+    let user = localStorage.getItem('User')
+
+    if (user)
+        user = JSON.parse(user)
 
     return (
         <nav className="nav-bar">
@@ -22,12 +26,13 @@ const Header = () => {
                 <li><NavLink to='/news' style={{color: 'white', textDecoration: 'none'}}>Tin tức</NavLink></li>}
             </ul>
 
-            {user.role === undefined &&
+            {user.role === undefined ?
                 <div className="nav-right">
                     <button className="login-btn btn btn--red">
                         <Link to='/login' style={{color: 'white', textDecoration: 'none'}}>Đăng nhập</Link>
                     </button>
-                </div>
+                </div> :
+                <RightMenu avatar={user.image}/>
             }
         </nav>
     )

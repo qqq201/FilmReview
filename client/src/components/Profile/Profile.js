@@ -1,11 +1,10 @@
-import './infor.css'
-import MovieCatalog from "../MovieCatalog/MovieCatalog";
-import dataSlider from "../carousel/dataSlider";
+import './Profile.css'
 import React from "react";
-const information = (props) => {
+
+const Profile = (props) => {
     const info = [
         {
-            id_name:'Adam',
+        id_name:'Adam',
         dateofbirth: '1/1/2001',
         sex: ' Nữ ',
         email: 'adam@gmail.com',
@@ -60,4 +59,4 @@ const information = (props) => {
         </>
     );
 };
-export default information;
+export default Profile;

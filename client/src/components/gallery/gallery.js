@@ -22,7 +22,7 @@ const Gallery = (props) => {
     return (
         <div className='gallery'>
             <div className="gallery-header">
-                {props.name}
+                Bo suu tap
                 <span className="gallery-header-line"></span>
             </div>
             <div className="catalogs">
