@@ -3,7 +3,7 @@
     height: 500px;
 }
 
-.modal-header {
+.assign-mod-modal > .modal-header {
     width: 100%;
     background-color: #F05462;
 }

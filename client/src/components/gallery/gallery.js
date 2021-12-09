@@ -10,7 +10,6 @@ const Gallery = (props) => {
         const fetch_gallery = async () => {
             try {
                 const response = await movieApi.getGallery()
-                console.log(response)
                 if (response.gallery)
                     setGallery(response.gallery)
             } catch (error){

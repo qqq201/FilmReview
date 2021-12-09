@@ -15,8 +15,14 @@
     background-color: #2DD872;
 }
 
+.section h4 {
+    font-weight: bold;;
+    font-size: 20px;
+    color: black;
+}
+
 .section p {
-    font-family: sans-serif;
+    font-size: 20px;
 }
 
 .photo {

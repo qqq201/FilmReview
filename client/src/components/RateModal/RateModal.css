@@ -1,0 +1,37 @@
+.rate-slider {
+    width: 80%;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rating-score {
+    text-align: center;
+    font-size: 30px;
+    color: #D89E2D;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.rating-min {
+    width: 50%;
+    float: left;
+    font-size: 15px;
+}
+
+.rating-max {
+    width: 50%;
+    float: right;
+    text-align: right;
+    font-size: 15px;
+}
+
+.rate-slider > .btn {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 80px;
+    height: 40px;
+}
