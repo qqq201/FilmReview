@@ -6,7 +6,8 @@ const HomePage = () => {
 
     if (user)
         user = JSON.parse(user)
-
+    else
+        user = {}
     return (
         <>
             {(user.role === undefined || user.role === 'user') && <Carousel/>}

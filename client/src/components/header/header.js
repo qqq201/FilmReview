@@ -9,7 +9,8 @@ const Header = () => {
 
     if (user)
         user = JSON.parse(user)
-
+    else 
+        user = {}
     return (
         <nav className="nav-bar">
             <div className="nav-search">
