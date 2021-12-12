@@ -4,7 +4,9 @@ import { CgProfile } from 'react-icons/cg'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { IconContext } from "react-icons"
 
+
 const RightMenu = (props) => {
+
     return (
         <Dropdown className='right-menu'>
             <Dropdown.Toggle>
@@ -21,11 +23,11 @@ const RightMenu = (props) => {
                     <div className='menu-item-profile'>Thông tin</div>
                 </Dropdown.Item>
 
-                <Dropdown.Item>
+                <Dropdown.Item href='/'>
                     <IconContext.Provider value={{ className: "logout-icon" }}>
                     <RiLogoutBoxRLine/>
                     </IconContext.Provider>
-                    <div className='menu-item-logout'>Đăng xuất</div>
+                    <div className='menu-item-logout' onClick={()=>localStorage.setItem('User', '')}> Đăng xuất</div>
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>

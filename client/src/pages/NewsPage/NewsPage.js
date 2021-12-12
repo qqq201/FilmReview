@@ -24,27 +24,11 @@ const NewsPage = () => {
 
     return (
         <div className='gallery'>
+            {/* user.role !=== undefind && user.role === 'admin &&  them moi button  */ }
             <div className="news">
                 {state.map((news, index) => (
-                    // <div className="news-item" key={index}>
-                    //     <div className='news-photo'>
-                    //         <img src={news.thumbnail} alt="Poster"/>
-                    //     </div>
-                    //     <div className="post-wrapper">
-                    //         <h2 className='post-title-link' color= 'black'>
-                    //             <a href={news.articleLink} >
-                    //                 {news.title}
-                    //             </a>
-                    //         </h2>
-                    //         <span className="post-date">{news.time}</span>
-                    //         <div className="post-excerpt line-clamp">
-                    //             {news.content}
-                    //         </div>
-                    //     </div>
-                    // </div>
                     <NewsItem news={news} key={index} />
                 ))}
-                
             </div>
         </div>
     )

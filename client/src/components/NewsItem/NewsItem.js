@@ -17,6 +17,7 @@ const NewsItem = (props) => {
                     {props.news.content}
                 </div>
             </div>
+            {/* user.role !=== undefind && user.role === 'admin &&  them moi button  */ }
         </div>
     )
 }
