@@ -1,7 +1,8 @@
+import Addmovie from '../../components/Addmovie/addmovie.jsx'
 const RankingPage = () => {
     return (
         <>
-        <div>Ranking</div>
+        < Addmovie/>
         </>
     )
 }
