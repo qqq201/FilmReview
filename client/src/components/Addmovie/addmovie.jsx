@@ -1,9 +1,9 @@
 import './add_movie.css'
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState} from 'react'
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 
 const Addmovie = (props) => {
     const [selectedImage, setSelectedImage] = useState();
