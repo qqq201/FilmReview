@@ -1,28 +1,15 @@
 import {useState} from "react";
-<<<<<<< Updated upstream
-
-
-const Card = (props) => {
-
-    const {name, image, date, message, like, dislike, comment, popupComment} = props;
-
-    // when click to like or dislike the change the state of like or dislike
-=======
 import $ from "jquery";
 
 const CardReview = (props) => {
 
     const {name, image, date, message, like, dislike, num, idUser} = props;
 
->>>>>>> Stashed changes
     const [likeState, setLikeState] = useState(like);
     const [dislikeState, setDislikeState] = useState(dislike);
     const [isLike, setIsLike] = useState(false);
     const [isDislike, setIsDislike] = useState(false);
-<<<<<<< Updated upstream
-=======
     let [isOpen, setIsOpen] = useState(false);
->>>>>>> Stashed changes
 
     const handleLike = () => {
         if (isLike) {
@@ -44,30 +31,6 @@ const CardReview = (props) => {
         }
     };
 
-<<<<<<< Updated upstream
-    // useEffect(() => {
-    //     // async function uploadComment() {
-    //     //     const response = await fetch('/', {
-    //     //         method: 'POST',
-    //     //         headers: {
-    //     //             'Content-Type': 'application/json'
-    //     //         },
-    //     //         body: JSON.stringify({
-    //     //             name: name,
-    //     //             image: image,
-    //     //             date: date,
-    //     //             message: message,
-    //     //             like: likeState,
-    //     //             dislike: dislikeState,
-    //     //             comment: comment
-    //     //         })
-    //     //     });
-    //     //     const data = await response.json();
-    //     //     console.log(data);
-    //     // }
-    //
-    // }, [likeState, dislikeState]);
-=======
     const popupComment = () => {
         if (isOpen) {
             $(`#${idUser}` + "chatbox").removeAttr("hidden");
@@ -78,16 +41,11 @@ const CardReview = (props) => {
         }
 
     }
->>>>>>> Stashed changes
 
 
     return (
         <>
-<<<<<<< Updated upstream
-            <div className="container card bg-white mr-5 mb-1">
-=======
             <div className="container card bg-white mr-5 my-4">
->>>>>>> Stashed changes
 
                 <div id="content-image" className="card-header bg-white">
                     <img className="image-border mt-5 text-float mr-3" src={image}
@@ -118,17 +76,11 @@ const CardReview = (props) => {
 
                     <div className="right-side-button mt-3">
 
-<<<<<<< Updated upstream
-                        <span className="h2"> {comment.num}   </span> <i className="fa fa-comment fa-3x"
-                                                                         aria-hidden="true" type="button"
-                                                                         onClick={popupComment}> </i>
-=======
                         <span className="h2"> {num} </span>
                         <button className="border-0 bg-white text-muted btn-outline-success"><i
                             className="fa fa-comment fa-3x"
                             aria-hidden="true" type="button"
                             onClick={popupComment}> </i></button>
->>>>>>> Stashed changes
                     </div>
                 </div>
 
@@ -140,8 +92,4 @@ const CardReview = (props) => {
 
 }
 
-<<<<<<< Updated upstream
-export default Card;
-=======
 export default CardReview;
->>>>>>> Stashed changes
