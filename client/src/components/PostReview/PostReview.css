@@ -5,6 +5,30 @@
     object-fit: cover;
 }
 
+.image-round {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: -1.5rem;
+    left: 1.5rem;
+
+}
+
+
+.image-round-comment {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: -1.5rem;
+    left: 1.5rem;
+}
+
+
+
 .text-float {
     float: left;
     text-align: left;

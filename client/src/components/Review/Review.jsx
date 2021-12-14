@@ -11,7 +11,7 @@ const Review = () => {
     const name = "Adam"
     const [visiblePopup, setVisiblePopup] = useState(false);
 
-    async function submit() {
+    function submit() {
         const though = $("#input-review").val();
         console.log(though);
         setVisiblePopup(false);
