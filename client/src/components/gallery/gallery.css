@@ -31,3 +31,13 @@
     top: 130%;
     background-color: #2DD872;
 }
+
+
+.icon-love {
+    position : absolute;
+    top: 33rem;
+    left: 1rem;
+    z-index : 9999;
+    color: #F05462;
+
+}

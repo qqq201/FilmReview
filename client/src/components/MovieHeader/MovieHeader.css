@@ -31,6 +31,26 @@
 .movie-poster {
     width: 20%;
     float: left;
+    position: relative;
+}
+
+
+.icon-love {
+    position : absolute;
+    top: 33rem;
+    left: 1rem;
+    z-index : 9999;
+    color: #F05462;
+
+}
+.icon-love .btn:hover {
+    fill: white;
+    border: 0;
+}
+
+.icon-love .btn i {
+    color: #F05462;
+    border: 0;
 }
 
 .movie-poster img{
@@ -38,7 +58,7 @@
     width: 100%;
     height: 100%;
     border-radius: 20px 0px 0px 0px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .trailer {

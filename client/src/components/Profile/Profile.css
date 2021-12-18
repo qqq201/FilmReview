@@ -3,6 +3,7 @@
     background-color: white;
     padding-top: 100px;
     margin: 0px 186px;
+    width: 110rem;
 }
 .site-title {
 
@@ -113,4 +114,10 @@
      font-weight: bold;
      font-size: 30px;
 
+}
+
+#favorite-container {
+    width: 110rem;
+    position: relative;
+    left: 1.6rem;
 }
