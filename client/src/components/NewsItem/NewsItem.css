@@ -41,3 +41,12 @@
 .post-wrapper .post-excerpt{
     font-size: 20px;
 }
+
+.add-news {
+    border-radius: 10px;
+    color: black;
+}
+
+.add-news:hover {
+    color: black;
+}

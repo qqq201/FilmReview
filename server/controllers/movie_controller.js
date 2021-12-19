@@ -23,7 +23,7 @@ class MovieController {
     async getGallery(req, res, next){
             try {
             // Check for existing user
-            const movies = await MovieModel.find({})
+            const movies = await MovieModel.find({});
             let gallery = []
 
             movies.forEach((item, i) => {
