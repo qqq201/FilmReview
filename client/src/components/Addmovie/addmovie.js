@@ -1,3 +1,4 @@
+
 import './add_movie.css'
 // import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState} from 'react'
@@ -96,7 +97,7 @@ const Addmovie = (props) => {
                 <form className="row">
                     <div className="mb-1">
                         <div className="title">
-                            <button type="button" className="close" aria-label="Close">
+                            <button type="button" className="close" aria-label="Close" typeof="/home">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
