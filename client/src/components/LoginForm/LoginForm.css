@@ -18,6 +18,8 @@
 }
 
 .rectangle {
+    position: relative;
+    top: -8rem;
     display: flex;
     transform: rotate(-14deg);
     justify-content: center;
