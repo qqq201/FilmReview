@@ -30,7 +30,6 @@ const  Favorite= (props) => {
                 <div className="galleries">
                     {movies.map(movie => (
                         <MovieCatalog
-                            key = {movie.id}
                             movie={movie}
                             role={role}
                             isAuthen={isAuthen}
