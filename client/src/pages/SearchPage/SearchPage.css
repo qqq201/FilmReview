@@ -1,0 +1,10 @@
+.list-search-results{
+    padding-top: 100px;
+    height: 2000px;
+    width: 76%;
+    margin: 0 12%;
+}
+
+.list-search-results a:hover {
+    text-decoration: none;
+}

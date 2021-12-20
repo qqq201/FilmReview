@@ -1,6 +1,20 @@
 import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
+<<<<<<< HEAD
+import {NavLink, Link, useNavigate} from 'react-router-dom'
+import {useState } from 'react'
+
+const Header = () => {
+    const navigate = useNavigate()
+    function handleNavigatePage(e) {
+        if (e.keyCode === 13) {
+/*            navigate("search/" + document.querySelector(".nav-search-bar").value)*/
+            window.location.href =  "http://localhost:3000/" + "search/" + document.querySelector(".nav-search-bar").value
+        }
+
+    }
+=======
 import { NavLink, Link } from 'react-router-dom'
 import RightMenu from '../RightMenu/RightMenu.js'
 
@@ -11,13 +25,15 @@ const Header = () => {
         user = JSON.parse(user)
     else 
         user = {}
+>>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
     return (
         <nav className="nav-bar">
             <div className="nav-search">
-                <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..."/>
-                <IconContext.Provider value={{ className: "nav-search-icon" }}>
-                <AiOutlineSearch/>
+                <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
+                <IconContext.Provider value={{className: "nav-search-icon"}}>
+                    <AiOutlineSearch/>
                 </IconContext.Provider>
+
             </div>
             <ul className="nav-main-header">
                 <li><NavLink to='/' style={{color: 'white', textDecoration: 'none'}}>Trang chủ</NavLink></li>

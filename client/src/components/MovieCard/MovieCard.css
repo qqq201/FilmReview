@@ -1,0 +1,50 @@
+.search-card{
+    height: 250px;
+    display: flex;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+    background-color: #33485e;
+    border-radius: 20px;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.2s;
+    margin-bottom: 32px;
+}
+
+.search-card:hover{
+    transform: scale(0.99);
+    text-decoration: none;
+}
+
+.search-card img{
+    width: 15%;
+    object-fit: cover;
+}
+.search-card-info{
+    padding-left: 32px;
+    margin: auto 0;
+}
+.search-card-name{
+    padding-right: 12px;
+}
+.search-card-year, .search-card-content, .search-card-actor{
+    font-weight: 100;
+}
+.search-card-name,  .search-card-content b, .search-card-actor b, .search-card-genres{
+    font-weight: bold;
+}
+
+.search-card-content, .search-card-genres{
+    margin-bottom: 12px;
+}
+
+.search-card-actor{
+    margin-bottom: 0;
+}
+
+.search-card-rating{
+    font-weight: 500;
+    padding-bottom: 20px;
+}

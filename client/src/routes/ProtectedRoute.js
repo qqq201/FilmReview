@@ -9,4 +9,3 @@ const ProtectedRoute = ({ component: Component, redirectTo, isAuth, path, ...pro
 };
 
 export default ProtectedRoute;
-			

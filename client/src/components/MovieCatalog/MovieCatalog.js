@@ -31,8 +31,13 @@ const MovieCatalog = (props) => {
 	                    Xem thêm
 	                    </Link>
 	                </div>
+<<<<<<< HEAD
+		            {props.role === 'admin' && props.isAuthen &&
+                        <button className='btn-assign-mod' onClick={() => {setModalOpen(true)}}>+</button>}
+=======
 		            {user && user.role === 'admin' &&
 		            	<button className='btn-assign-mod' onClick={() => {setModalOpen(true)}}>+</button>}
+>>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
 	            </div>
 	        </div>
         </div>

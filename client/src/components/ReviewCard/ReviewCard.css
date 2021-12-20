@@ -1,0 +1,79 @@
+.pReview-card{
+    width: 48%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 1%;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    color: #333;
+    margin: 0 1% 2%;
+}
+
+.pReview-header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+}
+
+.pReview-header-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pReview-avatar{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.pReview-info{
+    padding: 0 14px 0 14px;
+}
+.pReview-username{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.pReview-date{
+    font-size: 10px;
+    line-height: 18px;
+    font-weight: 100;
+    margin-bottom: 0
+}
+
+.pReview-rank{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.pReview-header-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pReview-btn-accept,
+.pReview-btn-refuse{
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+
+
+.pReview-btn-accept + .pReview-btn-refuse{
+    margin-left: 20px;
+}
+
+.pReview-description{
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}

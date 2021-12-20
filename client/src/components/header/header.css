@@ -4,7 +4,7 @@
     background-color: #2D3E50;
     width: 100%;
     padding-top: 14px;
-    z-index: 999;
+    z-index: 1;
 }
 
 .nav-search{
@@ -77,11 +77,13 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
+    transition: all 0.2s ease;
 }
 
 .btn:hover{
     cursor: pointer;
     opacity: 0.9;
+    transform: scale(0.98);
 }
 
 .btn--border-radius{
@@ -90,5 +92,9 @@
 
 .btn.btn--red{
     background: #F05462;
+    color: #fff;
+}
+.btn.btn--green{
+    background: #2DD872;
     color: #fff;
 }
