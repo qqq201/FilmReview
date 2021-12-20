@@ -1,35 +1,25 @@
-import './header.css'
+import './header.css'gi
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
-<<<<<<< HEAD
-import {NavLink, Link, useNavigate} from 'react-router-dom'
-import {useState } from 'react'
-
-const Header = () => {
-    const navigate = useNavigate()
-    function handleNavigatePage(e) {
-        if (e.keyCode === 13) {
-/*            navigate("search/" + document.querySelector(".nav-search-bar").value)*/
-            window.location.href =  "http://localhost:3000/" + "search/" + document.querySelector(".nav-search-bar").value
-        }
-
-    }
-=======
-import { NavLink, Link } from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 import RightMenu from '../RightMenu/RightMenu.js'
 
 const Header = () => {
+    function handleNavigatePage(e) {
+        if (e.keyCode === 13) {
+            window.location.href =  "http://localhost:3000/" + "search/" + document.querySelector(".nav-search-bar").value
+        }
+    }
     let user = localStorage.getItem('User')
 
     if (user)
         user = JSON.parse(user)
     else 
         user = {}
->>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
     return (
         <nav className="nav-bar">
             <div className="nav-search">
-                <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
+             git    <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
                 <IconContext.Provider value={{className: "nav-search-icon"}}>
                     <AiOutlineSearch/>
                 </IconContext.Provider>
@@ -54,5 +44,4 @@ const Header = () => {
         </nav>
     )
 }
-
 export default Header

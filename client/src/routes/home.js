@@ -19,13 +19,10 @@ const HomeRoute = () => {
                 <Route path='/ranking' element={<RankingPanel/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
                 <Route path='/movie/:id/*' element={<MovieRoute/>}/>
-<<<<<<< HEAD
                 <Route path='/search/:q/*' element={<SearchPage/>}/>
                 <Route path='/pReview' element={<BanUser display/>}/> {/*PendingReviewPage*/}
-=======
                 <Route path='/profile' element={<ProfilePage/>}/>
                 <Route path='/addmovie' element={<Addmovie/>}/>
->>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
             </Routes>
         </>
     )

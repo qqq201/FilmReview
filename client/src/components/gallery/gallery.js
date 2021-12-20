@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import MovieCatalog from '../MovieCatalog/MovieCatalog.js'
 
 const Gallery = (props) => {
-<<<<<<< HEAD
     const movies = [{
         id: "123",
         title: 'money heist',
@@ -22,7 +21,6 @@ const Gallery = (props) => {
     }]
     const role = 'admin'
     const isAuthen = true
-=======
     const [gallery, setGallery] = useState([])
 
     useEffect(() => {
@@ -38,7 +36,6 @@ const Gallery = (props) => {
 
         fetch_gallery()
     }, [])
->>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
 
     return (
         <div className='gallery'>
@@ -47,18 +44,15 @@ const Gallery = (props) => {
                 <span className="gallery-header-line"></span>
             </div>
             <div className="catalogs">
-<<<<<<< HEAD
                 {movies.map(movie => (
                     <MovieCatalog
                         key = {movie.id}
                         movie={movie}
                         role={role}
                         isAuthen={isAuthen}
-                    />
-=======
+                    />))}
                 {gallery.map((movie, index) => (
                     <MovieCatalog movie={movie} key={index}/>
->>>>>>> 18066d9e3d549a99010dbf43de42534301283e47
                 ))}
             </div>
         </div>
