@@ -3,6 +3,9 @@
     margin-left: auto;
     width: 3.5%;
 }
+.dropdown-toggle.btn{
+    height: 80%;
+}
 
 .right-menu .dropdown-toggle {
     width: 100%;
@@ -17,8 +20,13 @@
 }
 
 .right-menu .dropdown-toggle img {
-    width: 100%;
+    width: 110%;
+    height: inherit;
     margin: 0px;
+    object-fit: contain;
+    border: 4px  #F05462;
+    border-radius: 20px;
+    box-sizing: content-box;
 }
 
 .right-menu .dropdown-menu {
@@ -57,3 +65,4 @@
     float: left;
     color: #F05462;
 }
+

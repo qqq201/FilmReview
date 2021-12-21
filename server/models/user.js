@@ -13,17 +13,15 @@ const userSchema = new mongoose.Schema({
     role: String,
     name: String,
     email: String,
-    dob: Date,
+    dob: String,
     gender: String,
     city: String,
     favoriteList: [{
         moviedId: String
     }],
 
-    level: {
-        Number,
-        default: 0
-    },
+    level:  Number,
+
 
     Point: Number,
     releasedDate: Date,

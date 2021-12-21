@@ -1,58 +1,126 @@
+
 .info{
+    margin-left: 14%;
+    margin-right: 14%;
+    padding-top: 10px;
+    width: 75%;
+    position: absolute;
+    top: 98px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0));
+    background-color: #E8EDF1;
     height: 630px;
-    background-color: white;
-    padding-top: 100px;
-    margin: 0px 186px;
-    width: 110rem;
 }
-.site-title {
-
-    margin: 0 auto;
-    margin-bottom: 30px;
-    border-bottom: 4px double #FFF
+.info form{
+    width: 100%;
+    margin: 0px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    color: #E8EDF1;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+    padding-top: 2px;
 }
 
-.site-title .site-name{
-    padding-left: 45px;
-    padding-top: 213px;
+.info .avartar-name{
+
+}
+.info .score-rank{
+
+}
+.info .row .col-sm-6{
+
+}
+.info .row .col-sm-6 .mb-2 .row .col-sm-4 .avatar {
+    margin-top: 66px;
+    margin-left: 60px;
+    width: 160px;
+    height: 160px;
+    left: 64px;
+    top: 49px;
+    border-radius: 65px;
+}
+.info .row .col-sm-6 .mb-2 .row .col-sm-4 .name {
+    text-align: center;
     color: #010000;
-    font-size: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 127px;
+}
+
+.info .row .col-sm-6 .mb-2 .row .col-lg-6 .level{
+    font-family: Play;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.info .row .col-sm-6 .mb-2 .row .col-lg-6 .curent_level{
+    position: absolute;
+
+    height: 20px;
+    top: 131px;
+
+    background: #2DD872;
+    border-radius: 20px;
+}
+.info .row .col-sm-6 .mb-2 .row .col-lg-6 .levelmax{
+    position: absolute;
+    width: 290px;
+    height: 20px;
+    top: 131px;
+    background: #C4C4C4;
+    border-radius: 20px;
+}
+.info .row .col-sm-6 .mb-2 .row .col-lg-6 .level_max{
+    position: absolute;
+    width: 171px;
+    height: 24px;
+    top: 152px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.info .row .col-sm-6 .mb-2 .row .col-lg-6 .rank {
+    margin-top: 66px;
+    margin-left: 60px;
+    width: 160px;
+    height: 160px;
+    left: 64px;
+    top: 49px;
+    border-radius: 65px;
+}
+.info .row .col-sm-6 .site-name{
+    padding-left: 45px;
+    padding-top: 20px;
+    color: #010000;
     line-height: 37.5px;
     line-snap: revert;
     font-style: normal;
     font-weight: bold;
+    font-size: 30px;
 }
- /*Ngày sinh giới tính email*/
-.site-title .ngaysinh , .site-title .gioitinh,.site-title .email {
+.info .row .col-sm-6 .ngaysinh , .info .row .col-sm-6 .gioitinh,.info .row .col-sm-6 .email ,.info .row .col-sm-6 .city ,.info .row .col-sm-6 .password {
+
     padding-left: 103px;
-    font-size: 23px;
+    padding-top: 10px;
+    font-size: 25px;
     line-height: 4.5px;
     font-family: Poppins;
     font-style: italic;
     font-weight: normal;
 }
-
-.site-title .ngaysinh{
-    padding-top: 21.5px;
-    color: #010000;
-}
-.site-title .gioitinh{
-
-    padding-top: 47px;
-    color: #010000;
-}
-.site-title .email{
-    padding-top: 47px;
-    color: #010000;
-}
-
-.site-title .site-name {
-    font-size: 25px
-}
-.site-title .date_birth, .site-title .sex, .site-title .Email{
+.info .row .col-sm-6  .date_birth, .info .row .col-sm-6  .sex, .info .row .col-sm-6  .Email, .info .row .col-sm-6  .tp,.info .row .col-sm-6  .mk {
     padding-left: 103px;
-    padding-top: 15px;
+    padding-top: 27px;
     font-style: italic;
     color: #010000;
     font-size: 23px;
@@ -61,63 +129,12 @@
     font-style: normal;
     font-weight: bold;
 }
-
-/*............................................................*/
-.site-title2 {
-    margin: -270px auto;
-    margin-bottom: 30px;
-    border-bottom: 4px double #FFF
+.info .row .col-sm-6 .gioitinh , .info .row .col-sm-6 .email, .info .row .col-sm-6 .password {
+    padding-top: 54px;
 }
-.site-title2 .city ,.site-title2 .password {
-    padding-left: 606px;
-    font-size: 23px;
-    line-height: 4.5px;
-    font-family: Poppins;
-    font-style: italic;
-    font-weight: normal;
-}
-.site-title2 .password{
-
-    padding-top: 47px;
-    color: #010000;
-}
-
-.site-title2 .city{
-    padding-top: 21.5px;
-    color: #010000;
-}
-.site-title2 .tp, .site-title2 .mk{
-    padding-left: 606px;
-    padding-top: 15px;
-    font-style: italic;
-    color: #010000;
-    font-size: 23px;
-    line-height: 4.5px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-}
-.avatar{
-    position: absolute;
-    width: 130px;
-    height: 124.52px;
-    left: 247px;
-    top: 143px;
-    -webkit-border-radius:42%;
-}
- .name{
-     position: absolute;
-     left: 437px;
-     top: 189px;
-     color: #010000;
-     font-style: normal;
-     font-weight: bold;
-     font-size: 30px;
+.info .row .col-sm-6. check{
 
 }
-
-#favorite-container {
-    width: 110rem;
-    position: relative;
-    left: 1.6rem;
+.info .row .col-sm-6 .ngaysinh ,.info .row .col-sm-6 .city{
+    padding-top: 25px;
 }

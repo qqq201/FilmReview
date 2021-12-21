@@ -1,4 +1,4 @@
-import './header.css'gi
+import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
 import {NavLink, Link} from 'react-router-dom'
@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <nav className="nav-bar">
             <div className="nav-search">
-             git    <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
+             <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
                 <IconContext.Provider value={{className: "nav-search-icon"}}>
                     <AiOutlineSearch/>
                 </IconContext.Provider>
