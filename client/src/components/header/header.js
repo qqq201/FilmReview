@@ -14,9 +14,10 @@ const Header = () => {
     return (
         <nav className="nav-bar">
             <div className="nav-search">
-                <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..."/>
-                <IconContext.Provider value={{ className: "nav-search-icon" }}>
-                <AiOutlineSearch/>
+             <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
+                <IconContext.Provider value={{className: "nav-search-icon"}}>
+                    <AiOutlineSearch/>
+
                 </IconContext.Provider>
             </div>
             <ul className="nav-main-header">

@@ -124,3 +124,12 @@
     color: black;
     font-weight: 300;
 }
+
+
+.prompt-signup {
+    position: absolute; 
+    top: 20em;
+    left: -39rem;
+    height: 35% !important;
+    z-index: 9999; 
+}

@@ -1,4 +1,5 @@
 .nav-bar{
+    height: 87px;
     position: fixed;
     display: flex;
     background-color: #2D3E50;

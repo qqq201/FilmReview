@@ -1,9 +1,3 @@
-.gallery {
-    padding-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 1rem;
-}
-
 .gallery-header .icon-favorite {
     color: #F05462;
 }
@@ -12,7 +6,4 @@
     color: #F05462;
     font-weight: bold;
     font-size: 2rem;
-}
-
-.catalog {
 }

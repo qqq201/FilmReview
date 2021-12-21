@@ -10,6 +10,13 @@
 }
 
 
+.form-group-signup {
+    height: 20rem !important;
+    width: 54rem !important;
+}
+
+
+
 .dropdown-gender {
     width: 99.5%;
     padding-left: 2rem;

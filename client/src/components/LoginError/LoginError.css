@@ -1,10 +1,21 @@
 .prompt {
     position: absolute;
     top: 20em;
-    left: -20rem;
+    left: 35rem;
     height: 35% !important;
     z-index: 9999;
 }
+
+
+
+.prompt-signup {
+    position: absolute; 
+    top: 20em;
+    left: -39rem;
+    height: 35% !important;
+    z-index: 9999; 
+}
+
 
 
 .wrapper-content {
