@@ -1,6 +1,6 @@
 import './MovieInfo.css'
 
-const MovieInfo = () => {
+const MovieInfo = (props) => {
     const movie = {
         content: "A family saga with a supernatural twist, set in a German town, where the disappearance of two young children exposes the relationships among four families.",
         genres: "Mystery",
@@ -18,27 +18,27 @@ const MovieInfo = () => {
             <div className='section'>
                 <h4>Nội dung</h4>
                 <div className='line'/>
-                <p>{movie.content}</p>
+                <p>{props.movie.content}</p>
             </div>
             <div className='section'>
                 <h4>Thể loại</h4>
                 <div className='line'/>
-                <p>{movie.genres}</p>
+                <p>{props.movie.genres}</p>
             </div>
             <div className='section'>
                 <h4>Diễn viên</h4>
                 <div className='line'/>
-                <p>{movie.actors}</p>
+                <p>{props.movie.actors}</p>
             </div>
             <div className='section'>
                 <h4>Đạo diễn</h4>
                 <div className='line'/>
-                <p>{movie.directors}</p>
+                <p>{props.movie.directors}</p>
             </div>
             <div className='section'>
                 <h4>Hình ảnh</h4>
                 <div className='line'/>
-                {movie.photos.map(photo => (
+                {props.movie.photos.map(photo => (
                     <div class='photo'>
                         <img src={photo} alt='movie capture'/>
                     </div>

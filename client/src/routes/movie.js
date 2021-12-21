@@ -6,7 +6,7 @@ const MovieRoute = () => {
     return (
         <>
             <Routes>
-                <Route path='/*' element={<MoviePage/>}/>
+                <Route path='' element={<MoviePage/>}/>
                 <Route path='/statistic' element={<StatisticPage/>}/>
             </Routes>
         </>

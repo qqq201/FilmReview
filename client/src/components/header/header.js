@@ -1,4 +1,4 @@
-import './header.css'gi
+import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
 import {NavLink, Link} from 'react-router-dom'
@@ -14,7 +14,7 @@ const Header = () => {
 
     if (user)
         user = JSON.parse(user)
-    else 
+    else
         user = {}
     return (
         <nav className="nav-bar">

@@ -4,9 +4,26 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 import RangeSlider from 'react-bootstrap-range-slider'
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import movieApi from "../../api/movie_api.js"
 
-const RateModal = ({isOpen, user_rated, setState}) => {
+const RateModal = ({isOpen, movie_id, user_id, user_rated, setState}) => {
     const [score, setScore] = useState(user_rated? user_rated : 0)
+
+    const rate = async () => {
+        try {
+            const response = await movieApi.rate(movie_id, user_id, score)
+            if (response.score){
+                isOpen = false
+                setState({
+                    is_rating: false,
+                    public_rate: response.score,
+                    user_rate: score
+                })
+            }
+        } catch (error){
+            console.log('Error', error)
+        }
+    }
 
     return (
         <Modal show={isOpen} onHide={() =>
@@ -38,12 +55,7 @@ const RateModal = ({isOpen, user_rated, setState}) => {
                         variant='warning'
                         tooltip='off'
                     />
-                    <Button variant='warning' onClick={() => {
-                        setState({
-                            is_rating: false,
-                            user_rate: score
-                        })
-                    }}>
+                    <Button variant='warning' onClick={rate}>
                         Rate
                     </Button>
                 </div>

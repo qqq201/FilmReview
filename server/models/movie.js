@@ -10,12 +10,13 @@ const movieSchema = new mongoose.Schema({
     genres: [String],
     actors: [String],
     director: [String],
-    rateScore : [
+    ratedScores : [
         {
-            userId: String,
+            user_id: String,
             score: Number
         },
     ],
+    rating: Number,
     photos : [String],
     reviews : [String],
     favoriteCount : {

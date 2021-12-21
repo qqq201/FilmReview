@@ -3,44 +3,62 @@ import RateModal from '../RateModal/RateModal.js'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import { AiOutlineStar } from 'react-icons/ai'
 import { IconContext } from 'react-icons'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import 'react-circular-progressbar/dist/styles.css';
 import {useNavigate} from "react-router-dom";
 
 const RatingScore = (props) => {
-    const score = 85
     const navigate = useNavigate();
 
     const [state, setState] = useState({
         is_rating: false,
+        public_rate: props.movie.rating,
         user_rate: null
     })
 
+    useEffect(() => {
+        setState({
+            is_rating: false,
+            public_rate: props.movie.rating,
+            user_rate: null
+        })
+
+    }, [props.movie])
+
+
+    let user = localStorage.getItem('User')
+
+    if (user)
+        user = JSON.parse(user)
+    else
+        user = {}
+
     return (
         <div className="rating-container">
-			<RateModal isOpen={state.is_rating} user_rated={state.user_rate} setState={setState}/>
+			<RateModal isOpen={state.is_rating} movie_id={props.movie._id} user_id={user._id || ''} user_rated={state.user_rate} setState={setState}/>
 
             <div className="rating-title">Điểm đánh giá</div>
             <div className="public-score-section">
-                <CircularProgressbarWithChildren value={score}
+                <CircularProgressbarWithChildren value={state.public_rate}
                     strokeWidth={15}
                     styles={buildStyles({
                         pathTransitionDuration: 1,
                         trailColor: '#2D3E50',
                         pathColor: '#2DD872'})}
-
                 >
                 <button className='public-score' onClick={() => {
-                    navigate('/movie/' + props.movie_id + '/statistic')
-                }}>{score}</button>
+                    navigate('/movie/' + props.movie._id + '/statistic')
+                }}>{state.public_rate}</button>
                 </CircularProgressbarWithChildren>
             </div>
-            { props.display &&
+            { user && user.role === 'user' &&
                 <>
                 <div className="rating-title">Điểm của bạn</div>
                 <button className="rate" onClick={() => setState({
-                    is_rating: true,
-                    user_rate: state.user_rate})}>
+                        is_rating: true,
+                        public_rate: state.public_rate,
+                        user_rate: state.user_rate
+                    })}>
 
                     { state.user_rate === null ?
                         <div>

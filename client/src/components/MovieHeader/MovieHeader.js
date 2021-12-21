@@ -4,15 +4,7 @@ import { useState } from 'react'
 import { set } from 'mongoose'
 import $ from 'jquery'
 
-const MovieHeader = () => {
-    const movie = {
-        id: 123,
-        title: "DARK",
-        year: "2019-2020",
-        trailer: "https://www.youtube.com/embed/BZ5OCIJVErw?rel=0&autohide=1",
-        poster: "https://tse2.mm.bing.net/th?id=OIP.RyEjgOqZqlIzdtyFsHcizwHaK-&pid=Api"
-    }
-
+const MovieHeader = (props) => {
     const [isLove, setLove] = useState(false);
 
     let firstTime = true;
@@ -27,29 +19,28 @@ const MovieHeader = () => {
         }
     }
 
-
     return (
         <div className="movie-header">
             <div className="movie-title">
-                <span className="movie-name">{movie.title}</span>
-                <span className="movie-year">{movie.year}</span>
+                <span className="movie-name">{props.movie.title}</span>
+                <span className="movie-year">{props.movie.year}</span>
             </div>
-            <div className="movie-poster"><img src={movie.poster} alt='poster' />
+            <div className="movie-poster"><img src={props.movie.poster} alt='poster' />
                 <div class="icon-love">
                     <div class="btn" onClick={displayLove}><i class="icon-color fa fa-heart-o fa-2x"></i></div>
                 </div>
             </div>
             <div className="trailer">
                 <iframe
-                    title={movie.title}
-                    src={movie.trailer}
+                    title={props.movie.title}
+                    src={props.movie.trailer}
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
             </div>
 
-            <RatingScore movie_id={movie.id} display={true} />
+            <RatingScore movie={props.movie} display={true} />
         </div>
     )
 }
