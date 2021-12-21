@@ -1,7 +1,7 @@
 import './header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
-import {NavLink, Link} from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import RightMenu from '../RightMenu/RightMenu.js'
 
 const Header = () => {
@@ -10,6 +10,8 @@ const Header = () => {
             window.location.href =  "http://localhost:3000/" + "search/" + document.querySelector(".nav-search-bar").value
         }
     }
+
+
     let user = localStorage.getItem('User')
 
     if (user)
@@ -19,11 +21,11 @@ const Header = () => {
     return (
         <nav className="nav-bar">
             <div className="nav-search">
-             git    <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
+             <input className="nav-search-bar" type="text" placeholder="Tìm kiếm phim..." onKeyDown={handleNavigatePage}/>
                 <IconContext.Provider value={{className: "nav-search-icon"}}>
                     <AiOutlineSearch/>
-                </IconContext.Provider>
 
+                </IconContext.Provider>
             </div>
             <ul className="nav-main-header">
                 <li><NavLink to='/' style={{color: 'white', textDecoration: 'none'}}>Trang chủ</NavLink></li>
@@ -44,4 +46,5 @@ const Header = () => {
         </nav>
     )
 }
+
 export default Header

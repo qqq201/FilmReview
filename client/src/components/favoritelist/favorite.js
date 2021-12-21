@@ -2,21 +2,6 @@ import './favorite.css'
 import MovieCatalog from '../MovieCatalog/MovieCatalog.js'
 
 const  Favorite= (props) => {
-    const movies = [{
-        id: "123",
-        title: 'money heist',
-        year: '2017-2012',
-        genres: 'action, crime',
-        score: 80
-
-    },{
-        id: "456",
-        title: 'money heist',
-        year: '2017-2012',
-        genres: 'action, crime',
-        score: 80
-    }]
-
     const role = 'admin'
     const isAuthen = true
 
@@ -30,7 +15,6 @@ const  Favorite= (props) => {
                 <div className="galleries">
                     {movies.map(movie => (
                         <MovieCatalog
-                            key = {movie.id}
                             movie={movie}
                             role={role}
                             isAuthen={isAuthen}

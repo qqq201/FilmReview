@@ -2,16 +2,57 @@ import "./AddNewsPage.css"
 import React, {useState} from 'react'
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import {useNavigate} from "react-router-dom";
+import newsApi from '../../api/news_api.js'
 
 const AddNewsPage = () => {
+    const navigate = useNavigate();
     const [selectedImage, setSelectedImage] = useState();
 
+    const backToHome = () => {
+        navigate("/news");
+    }
+
+    const [form, setForm] = useState({
+        title : '',
+        content : '',
+        thumbnail : '',
+        articleLink: '',
+        time : ''
+    })
+
+    function getBase64_2(file) {
+        let document = "";
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            document = reader.result;
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+
+        return document;
+    }
+
+    function getBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
+    }
+
     // This function will be triggered when the file field change
-    const imageChange = (e) => {
+    const imageChange = async (e) => {
         if (e.target.files && e.target.files.length > 0) {
             setSelectedImage(e.target.files[0]);
+            form.thumbnail = await getBase64(e.target.files[0])
+            setForm(form)
         }
     };
+    
 
     // This function will be triggered when the "Remove This Image" button is clicked
     const removeSelectedImage = () => {
@@ -88,13 +129,7 @@ const AddNewsPage = () => {
         }
     }
 
-    const [form, setForm] = useState({
-        title : '',
-        content : '',
-        thumbnail : '',
-        articleLink: '',
-        time : ''
-    })
+    
 
     const handleTitleChange = event => {
         form.title = event.target.value
@@ -105,8 +140,10 @@ const AddNewsPage = () => {
         setForm(form)
     };
     const handleThumbnailChange = event => {
-        form.thumbnail = event.target.value
-        setForm(form)
+        if (event.target.files && event.target.files.length > 0) {
+            form.thumbnail = event.target.files[0]
+            setForm(form)
+        }
     };
     const handleArticleLinkChange = event => {
         form.articleLink = event.target.value
@@ -117,11 +154,21 @@ const AddNewsPage = () => {
         setForm(form)
     };
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault();
-        alert(`Your state values: \n 
-                form: ${form.title} \n 
-                You can replace this alert with your process`);
+        // alert(`Your state values: \n 
+        //         form: ${form.thumbnail} \n 
+        //         You can replace this alert with your process`);
+        console.log(form.thumbnail)
+        try {
+            const response = await newsApi.upload(form)
+            if (response !== undefined) {
+                console.log(response)
+            }
+        } catch (error) {
+            console.log('Error', error)
+        }
+        
       };
 
     return (
@@ -130,7 +177,7 @@ const AddNewsPage = () => {
                 <form className="row" onSubmit={handleSubmit}>
                     <div className="mb-1">
                         <div className="title">
-                            <button type="button" className="close" aria-label="Close">
+                            <button type="button" className="close" aria-label="Close" onClick={backToHome}>
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -181,7 +228,7 @@ const AddNewsPage = () => {
                                     </button>
                                 </div>
                             )}
-                            <input accept="image/*"   type="file"   onChange={imageChange} className="add_image"  onChange={handleThumbnailChange}/>
+                            <input accept="image/*"   type="file"   onChange={imageChange} className="add_image"  />
                         </div>
 
                     </div>
