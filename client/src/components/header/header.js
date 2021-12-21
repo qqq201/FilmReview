@@ -5,6 +5,13 @@ import { NavLink, Link } from 'react-router-dom'
 import RightMenu from '../RightMenu/RightMenu.js'
 
 const Header = () => {
+    function handleNavigatePage(e) {
+        if (e.keyCode === 13) {
+            window.location.href =  "http://localhost:3000/" + "search/" + document.querySelector(".nav-search-bar").value
+        }
+    }
+
+
     let user = localStorage.getItem('User')
 
     if (user)
