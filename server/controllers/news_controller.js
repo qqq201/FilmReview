@@ -1,4 +1,7 @@
 import NewsModel from '../models/news.js'
+import FormData from 'form-data'
+import cloudinary from '../utils/cloudinary.js'
+
 
 class NewsController {
     // POST /api/movie
@@ -16,9 +19,14 @@ class NewsController {
 
     async upload(req, res, next) {
         try {
-            //res.thumbnail -> up len cloudianry -> url-> gắn vô res.thumbnail -> mongo
+            const uploadResponse = await cloudinary.uploader.upload(req.body.thumbnail, function(error, result) {console.log(result, error); });
+            console.log(uploadResponse)
             
-
+            req.body.thumbnail = uploadResponse.url
+            
+            const news = new NewsModel(req.body)
+            await news.save()
+            
             return res.status(200).json({message: 'Success'})
         } catch (error) {
             console.log(error)

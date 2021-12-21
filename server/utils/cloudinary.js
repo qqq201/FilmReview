@@ -1,5 +1,6 @@
-require('dotenv').config();
-import { v2 as cloudinary } from 'cloudinary';
+import cd from 'cloudinary';
+const cloudinary = cd.v2
+
 
 // ldkha19@clc.fitus.edu.vn
 // Kha020501#
@@ -13,4 +14,4 @@ cloudinary.config({
     api_secret: CLOUDINARY_API_SECRET,
 });
 
-export default { cloudinary };
+export default cloudinary;
