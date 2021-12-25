@@ -3,6 +3,7 @@ import CardReview from "./CardReview.jsx";
 import {Col, Row} from "react-bootstrap";
 import Reply from "./Reply.jsx";
 import CardComment from "./CardComment";
+import {Link} from "react-router-dom";
 
 
 const PostReview = () => {
@@ -166,10 +167,11 @@ const PostReview = () => {
     //         .then(data => setReviews(data))
     // }, [])
 
-
+    let user = JSON.parse(localStorage.getItem('User'))
     return (
         <section className="post-review">
             <div className="num-reviews text-black m-5 "> {reviews.length} reviews</div>
+            {user && user.role === 'moderator' && <Link to={"pReview"}><div className="pReview-btn btn btn--green">Phê duyệt</div></Link>}
             <div className="container brown-color">
 
                 {

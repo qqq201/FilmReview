@@ -13,7 +13,7 @@ const NewsItem = (props) => {
                     </a>
                 </h2>
                 <span className="post-date">{props.news.time}</span>
-                <div className="post-excerpt line-clamp">
+                <div className="post-excerpt line-clamp-3">
                     {props.news.content}
                 </div>
             </div>

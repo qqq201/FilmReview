@@ -5,8 +5,6 @@ import $ from 'jquery'
 
 
 const Review = () => {
-
-
     const avatar = ('https://s3-alpha-sig.figma.com/img/5936/f2b1/5cab0a53665641bb781444e3834b068d?Expires=1639958400&Signature=TyN15pDQaGNISCGzAeQyiT5C4uC6qUqWDUt0hMBIWwTJegLqYTg1sA6i4uQKpBHOgnfv-yGunUJFkyJ6U0GPj4K7xbGyJ0fOl0LyNeG4hLz~Tl3Qma42PWfn1Xnq3377U0iX1K52GAv1Gn2RBc~Kr3eIGnOgsactu7Mt3H8MstxBurczLQ43uD4P5mqsmPND~gUCMY9sCIt1-EotqDVj1fjvDC-ideNcKW2GZez5sb-KRDK6QC1MpYY2VqSHTNrQFVeIdqQpoXWqJBo90AH3GVfu~PIss93ozhTschBnB0DjxxW4HqYUMmdIWR90GygWMJAKSa1dx4ICQNxYazGKrQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA');
     const name = "Adam"
     const [visiblePopup, setVisiblePopup] = useState(false);
