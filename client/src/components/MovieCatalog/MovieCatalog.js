@@ -16,7 +16,7 @@ const MovieCatalog = (props) => {
 
 	return (
         <div className="catalog">
-			<AssignModModal isOpen={modalOpen} setOpenModal={setModalOpen} movie_id={props.movie.id}/>
+			{user.role && user.role === 'admin' && <AssignModModal isOpen={modalOpen} setOpenModal={setModalOpen} movie_id={props.movie.id}/>}
 
             <img src={props.movie.poster} alt="poster"/>
             <div className="item-info">
@@ -27,8 +27,8 @@ const MovieCatalog = (props) => {
                     <IconContext.Provider value={{ color: "#D89E2D" }}>
                     <AiFillStar/>
                     </IconContext.Provider>
-                    <span className="Aggregate-ratting">{props.movie.score}</span>
-                    <span> / 100</span>
+                    <span className="Aggregate-ratting">{props.movie.rating}</span>
+                    <span> /100</span>
                 </div>
                 <div className='btns-container'>
 	                <div className="more-info-btn">

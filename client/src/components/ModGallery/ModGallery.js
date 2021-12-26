@@ -1,15 +1,15 @@
-import './gallery.css'
 import movieApi from '../../api/movie_api.js'
 import React, { useEffect, useState } from 'react'
 import MovieCatalog from '../MovieCatalog/MovieCatalog.js'
 
-const Gallery = () => {
+const ModGallery = (props) => {
     const [gallery, setGallery] = useState([])
 
     useEffect(() => {
         const fetch_gallery = async () => {
             try {
-                const response = await movieApi.getGallery()
+                const response = await movieApi.getModGallery(props.mod_id)
+                console.log(response)
                 if (response.gallery)
                     setGallery(response.gallery)
             } catch (error){
@@ -23,7 +23,7 @@ const Gallery = () => {
     return (
         <div className='gallery'>
             <div className="gallery-header">
-                Bộ sưu tập
+                Danh sách phim quản lý
                 <span className="gallery-header-line"></span>
             </div>
             <div className="catalogs">
@@ -35,4 +35,4 @@ const Gallery = () => {
     )
 }
 
-export default Gallery
+export default ModGallery

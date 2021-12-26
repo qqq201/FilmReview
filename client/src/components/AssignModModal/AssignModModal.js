@@ -1,45 +1,31 @@
 import Modal from "react-bootstrap/Modal";
 import './AssignModModal.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IconContext } from "react-icons"
-//import "bootstrap/dist/css/bootstrap.min.css";
+import movieApi from '../../api/movie_api.js'
 
 const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
     const [state, setState] = useState({
-        moderators: [{
-           name: "Adam",
-           id: 1,
-           avatar_url: "https://www.thefix.com/sites/default/files/styles/article/public/Lambert.jpg",
-           email: "random@gmail.com",
-           assigned: true
-        }, {
-           name: "Bruce",
-           id: 1,
-           avatar_url: "https://www.thefix.com/sites/default/files/styles/article/public/Lambert.jpg",
-           email: "random@gmail.com",
-           assigned: true
-        },{
-           name: "Test",
-           id: 1,
-           avatar_url: "https://www.thefix.com/sites/default/files/styles/article/public/Lambert.jpg",
-           email: "random@gmail.com",
-           assigned: true
-        },{
-           name: "Adam",
-           id: 1,
-           avatar_url: "https://www.thefix.com/sites/default/files/styles/article/public/Lambert.jpg",
-           email: "random@gmail.com",
-           assigned: true
-        },{
-           name: "Austin",
-           id: 2,
-           avatar_url: "https://www.thefix.com/sites/default/files/styles/article/public/Lambert.jpg",
-           email: "random@gmail.com",
-           assigned: false
-    }],
+        moderators: [],
         searchMod: ""
     })
+
+    useEffect(() => {
+        const get_moderators = async () => {
+            try {
+                const response = await movieApi.getModerators(movie_id)
+                if (response.moderators){
+                    state.moderators = response.moderators
+                    setState(state)
+                }
+            } catch (error){
+                console.log('Error', error)
+            }
+        }
+
+        get_moderators()
+    }, [])
 
     const assign = (index) => {
         state.moderators[index].assigned = !state.moderators[index].assigned
@@ -51,12 +37,24 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
         setState({...state})
     }
 
-    const update_database = () => {
+    const close_modal = async () => {
+        var assigned_list = []
+        state.moderators.forEach((item, i) => {
+            if (item.assigned === true)
+                assigned_list.push(item.id)
+        })
 
+        try {
+            const response = await movieApi.assignModerators(movie_id, assigned_list)
+            if (response.success)
+                setOpenModal(false)
+        } catch (error){
+            console.log('Error', error)
+        }
     }
 
     return (
-        <Modal contentClassName="assign-mod-modal" scrollable={true} show={isOpen} onHide={() => setOpenModal(false)}>
+        <Modal contentClassName="assign-mod-modal" scrollable={true} show={isOpen} onHide={close_modal}>
             <Modal.Header>
                 <div className="mod-search">
                     <input type="text"
@@ -67,9 +65,7 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
                     </IconContext.Provider>
                 </div>
                 <div className="titleCloseBtn">
-                    <button onClick={() => {
-                        setOpenModal(false);
-                        update_database()}}>
+                    <button onClick={close_modal}>
                     x
                     </button>
                 </div>
@@ -85,7 +81,7 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
                     return false
                 }).map((moderator, index) => (
                     <div className='mod' key={index}>
-                        <img src={moderator.avatar_url} alt='mod avatar'/>
+                        <img src={moderator.avatar} alt='mod avatar'/>
 
                         <div className='mod-name'>{moderator.name}</div>
                         <div className='mod-assign'>

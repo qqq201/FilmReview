@@ -20,12 +20,23 @@ class MovieController {
             var movie = await MovieModel.find({_id: req.params.id});
             var movie = movie[0]
             movie.rating = 0
-            movie.ratedScores.push({
-                user_id: req.body.user_id,
-                score: req.body.score
-            })
-            
             var rated_scores = movie.ratedScores
+            var check = true
+
+            for (let i = 0; i < rated_scores.length; i++){
+                if (rated_scores[i].user_id === req.body.user_id){
+                    check = false
+                    rated_scores[i].score = req.body.score
+                }
+            }
+
+            if (check === true){
+                rated_scores.push({
+                    user_id: req.body.user_id,
+                    score: req.body.score
+                })
+            }
+
 
             var n = 0
             var user = {}
@@ -77,12 +88,92 @@ class MovieController {
                         'year': item.year,
                         'poster': item.poster,
                         'genres': item.genres,
-                        'moderator': item.moderator
+                        'rating': item.rating
                     }
                 )
             })
 
             return res.status(200).json({gallery: gallery})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    //GET /api/movie/gallery/:id
+    async getModGallery(req, res, next){
+        try {
+            var mod = await UserModel.find({_id: req.params.id})
+            mod = mod[0]
+
+            let gallery = []
+
+            for (let i = 0; i < mod.assignedMovie.length; i++){
+                var movie = await MovieModel.find({_id: mod.assignedMovie[i]})
+                gallery.push({
+                    'id': movie[0]._id,
+                    'title': movie[0].title,
+                    'year': movie[0].year,
+                    'poster': movie[0].poster,
+                    'genres': movie[0].genres,
+                    'rating': movie[0].rating
+                })
+            }
+
+            return res.status(200).json({gallery: gallery})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    //POST /api/movie/:id/assignModerators
+    async assignModerators(req, res, next) {
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+            const new_moderators = req.body.moderators
+
+            for (let i = 0; i < new_moderators.length; i++){
+                if (!movie.moderator.includes(new_moderators[i])){
+                    var mod = await UserModel.find({_id: new_moderators[i]})
+                    mod = mod[0]
+                    mod.assignedMovie.push(movie._id)
+                    const test = await UserModel.findByIdAndUpdate(new_moderators[i], mod)
+                }
+            }
+
+            movie.moderator = req.body.moderators
+            const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
+            return res.status(200).json({success: true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    //GET /api/movie/:id/moderators
+    async getModerators(req, res, next){
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+
+            var moderators = await UserModel.find({role: 'moderator'})
+            var assign_list = []
+
+            moderators.forEach((item, i) => {
+                assign_list.push(
+                    {
+                        'id': item._id,
+                        'name': item.name,
+                        'avatar': item.image,
+                        'email': item.email,
+                        'assigned': movie.moderator.includes(item._id) ? true : false
+                    }
+                )
+            })
+
+            return res.status(200).json({moderators: assign_list})
         } catch (error) {
             console.log(error)
             res.status(500).json({success: false, message: 'Internal server error'})

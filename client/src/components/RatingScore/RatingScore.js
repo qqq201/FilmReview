@@ -16,16 +16,6 @@ const RatingScore = (props) => {
         user_rate: null
     })
 
-    useEffect(() => {
-        setState({
-            is_rating: false,
-            public_rate: props.movie.rating,
-            user_rate: null
-        })
-
-    }, [props.movie])
-
-
     let user = localStorage.getItem('User')
 
     if (user)
@@ -33,6 +23,22 @@ const RatingScore = (props) => {
     else
         user = {}
 
+    useEffect(() => {
+        var score = null
+        props.movie.ratedScores.forEach((item, i) => {
+            if (item.user_id === user._id){
+                score = item.score
+            }
+        })
+
+        setState({
+            is_rating: false,
+            public_rate: props.movie.rating,
+            user_rate: score
+        })
+
+    }, [props.movie])
+    
     return (
         <div className="rating-container">
 			<RateModal isOpen={state.is_rating} movie_id={props.movie._id} user_id={user._id || ''} user_rated={state.user_rate} setState={setState}/>
