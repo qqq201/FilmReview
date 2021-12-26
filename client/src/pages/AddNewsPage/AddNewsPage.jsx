@@ -159,7 +159,6 @@ const AddNewsPage = () => {
         // alert(`Your state values: \n 
         //         form: ${form.thumbnail} \n 
         //         You can replace this alert with your process`);
-        console.log(form.thumbnail)
         try {
             const response = await newsApi.upload(form)
             if (response !== undefined) {
@@ -168,8 +167,9 @@ const AddNewsPage = () => {
         } catch (error) {
             console.log('Error', error)
         }
-        
+        navigate("/news");
       };
+
 
     return (
         <>
@@ -229,20 +229,6 @@ const AddNewsPage = () => {
                                 </div>
                             )}
                             <input accept="image/*"   type="file"   onChange={imageChange} className="add_image"  />
-                        </div>
-
-                    </div>
-                    <div className="mb-1">
-                        <div className="title">
-                            <h2 className="text-title">Hình ảnh bìa</h2>
-                            <div className="line"></div>
-                        </div>
-                        <div className="container">
-                            <div className="MainDiv">
-                                <div className="container">
-                                    <PicturesWall />
-                                </div>
-                            </div>
                         </div>
 
                     </div>

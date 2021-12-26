@@ -28,13 +28,20 @@ const NewsPage = () => {
     const redirect = () => {
         navigate("/news/add-news");
     }
+
+    let user = localStorage.getItem('User')
+
+    if (user)
+        user = JSON.parse(user)
+    else
+        user = {}
     
     return (
         <div className='gallery'>
             {/* user.role !=== undefind && user.role === 'admin &&  them moi button  */}
             <div className="news">
                 <div class="">
-                    <button class="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>
+                    {user.role === 'admin' && <button class="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>}
                 </div>
                 {state.map((news, index) => (
                     <NewsItem news={news} key={index} />
