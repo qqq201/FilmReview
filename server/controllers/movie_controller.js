@@ -179,6 +179,60 @@ class MovieController {
             res.status(500).json({success: false, message: 'Internal server error'})
         }
     }
+
+    async editcontent (req, res, next){
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+            movie.content = req.body.content
+            const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
+            return res.status(200).json({success:true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+    async editGenres (req, res, next){
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+            movie.genres = req.body.genres
+            const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
+            return res.status(200).json({success:true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    async editActors (req, res, next){
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+            movie.actors = req.body.actors
+            const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
+            return res.status(200).json({success:true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    async editDirector (req, res, next){
+        try {
+            var movie = await MovieModel.find({_id: req.params.id})
+            movie = movie[0]
+            movie.director = req.body.director
+            const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
+            return res.status(200).json({success:true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+
+
 }
 
 export default new MovieController()

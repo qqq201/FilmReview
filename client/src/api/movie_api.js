@@ -37,7 +37,47 @@ const movieApi = {
     getModGallery: (mod_id) => {
         const url = '/movie/gallery/' + mod_id
         return axiosClient.get(url)
+    },
+
+    editContent : (content, movie_id) =>{
+        const message = {
+            content: content
+        }
+        const url = '/movie/' + movie_id + '/editContent'
+
+        return axiosClient.post(url, message)
+
+    },
+
+    editGenres : (genres, movie_id) =>{
+        const message = {
+            genres: genres
+        }
+        const url = '/movie/' + movie_id + '/editGenres'
+
+        return axiosClient.post(url, message)
+
+    },
+
+    editActors : (actors, movie_id) =>{
+        const message = {
+            actors: actors
+        }
+        const url = '/movie/' + movie_id + '/editActors'
+
+        return axiosClient.post(url, message)
+
+    },
+    editDirector: (director, movie_id) =>{
+        const message = {
+            director: director
+        }
+        const url = '/movie/' + movie_id + '/editDirector'
+
+        return axiosClient.post(url, message)
+
     }
+
 }
 
 export default movieApi

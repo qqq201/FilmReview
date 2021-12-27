@@ -3,6 +3,7 @@ import MovieHeader from '../../components/MovieHeader/MovieHeader.js'
 import MovieInfo from '../../components/MovieInfo/MovieInfo.js'
 import Review from "../../components/Review/Review";
 import PostReview from "../../components/PostReview/PostReview";
+import MovieEditting from '../../components/MovieEditting/MovieEditting.js'
 import React, { useEffect, useState } from 'react'
 import movieApi from "../../api/movie_api.js"
 
@@ -42,10 +43,22 @@ const MoviePage = () => {
         fetch_movie()
     }, [])
 
+    var user = localStorage.getItem('User')
+
+    if (user)
+        user = JSON.parse(user)
+    else
+        user = {}
+
     return (
         <div className="movie-page">
             <MovieHeader movie={movie}/>
-            <MovieInfo movie={movie}/>
+            {user &&( user.role === 'user' || user.role === 'moderator') &&
+            <MovieInfo movie={movie}/>}
+
+            {user && user.role === 'admin'  &&
+            <MovieEditting movie={movie}/>}
+
             <div>
                 <Review/>
             </div>
