@@ -10,22 +10,22 @@ const RightMenu = (props) => {
     return (
         <Dropdown className='right-menu'>
             <Dropdown.Toggle>
-            <div class='corner-avatar'>
-            <img src={props.avatar} alt='avatar'/>
-            </div>
+                <div class='corner-avatar'>
+                    <img src={props.avatar} alt='avatar'/>
+                </div>
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item href="/profile">
+                <Dropdown.Item href={`/profile/${JSON.parse(localStorage.getItem("User"))._id}`}>
                     <IconContext.Provider value={{ className: "profile-icon" }}>
-                    <CgProfile/>
+                        <CgProfile/>
                     </IconContext.Provider>
                     <div className='menu-item-profile'>Thông tin</div>
                 </Dropdown.Item>
 
                 <Dropdown.Item href='/'>
                     <IconContext.Provider value={{ className: "logout-icon" }}>
-                    <RiLogoutBoxRLine/>
+                        <RiLogoutBoxRLine/>
                     </IconContext.Provider>
                     <div className='menu-item-logout' onClick={()=>localStorage.setItem('User', '')}> Đăng xuất</div>
                 </Dropdown.Item>

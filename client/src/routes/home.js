@@ -5,7 +5,6 @@ import NewsPage from '../pages/NewsPage/NewsPage.js'
 import AddNewsPage from '../pages/AddNewsPage/AddNewsPage.jsx'
 import ProfilePage from '../pages/ProfilePage/ProfilePage.js'
 import MovieRoute from './movie.js'
-import Addmovie from '../components/Addmovie/addmovie.js'
 import {Route, Routes} from 'react-router-dom'
 import SearchPage from "../pages/SearchPage/SearchPage";
 import PendingReviewPage from "../pages/PendingReviewspage/PendingReviewPage";
@@ -20,7 +19,7 @@ const HomeRoute = () => {
                 <Route path='/news' element={<NewsPage/>}/>
                 <Route path='/news/add-news' element={<AddNewsPage/>}/>
                 <Route path='/movie/:id/*' element={<MovieRoute/>}/>
-                <Route path='/profile' element={<ProfilePage/>}/>\
+                <Route path='/profile/:id/*' element={<ProfilePage/>}/>
                 <Route path='/search/:q/*' element={<SearchPage/>}/>
             </Routes>
         </>
