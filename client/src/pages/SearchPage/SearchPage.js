@@ -19,6 +19,7 @@ function removeVietnameseTones(str) {
     str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
     str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
     str = str.replace(/Đ/g, "D");
+    str = str.replaceAll("%20", " ");
     // Some system encode vietnamese combining accent as individual utf-8 characters
     // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
     str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
@@ -27,37 +28,15 @@ function removeVietnameseTones(str) {
     // Bỏ các khoảng trắng liền nhau
     str = str.replace(/ + /g," ");
     str = str.trim();
-    // Remove punctuations
-    // Bỏ dấu câu, kí tự đặc biệt
-    str = str.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g," ");
     return str;
 }
 
 const SearchPage = () => {
     var keyword = window.location.href.substr(window.location.href.indexOf("search/") + "search/".length)
-    keyword = keyword.trim();
-    keyword = keyword.replace(/\s+/g, ' ')
-    keyword = keyword.toLowerCase();
     keyword = removeVietnameseTones(keyword);
 
     const [gallery, setGallery] = useState([])
-    const [movie, setMovie] = useState({
-        _id: "" ,
-        title: "",
-        year: "",
-        poster: "",
-        trailer: "",
-        content: "",
-        genres: [],
-        actors: [],
-        director: [],
-        ratedScores: [],
-        rating: 0,
-        photos: [],
-        reviews: [],
-        favoriteCount: 0,
-        moderator: []
-    })
+
     useEffect(() => {
         const fetch_gallery = async () => {
             try {
@@ -76,20 +55,20 @@ const SearchPage = () => {
 
     return (
         <div className = "list-search-results">
-            {listResults.map((item, index) => {
+            {listResults.map((movie, index) => {
                 const fetch_movie = async () => {
                     try {
-                        const response = await movieApi.getInfo(item.id)
+                        const response = await movieApi.getInfo(movie.id)
                         if (response.movie){
-                            setMovie(response.movie)
+                            movie = response.movie
+                            console.log(movie)
                         }
 
                     } catch (error){
                         console.log('Error', error)
                     }}
                 fetch_movie()
-
-                return <Link to={'../movie/' + movie._id} ><MovieCard key={index} movie={movie}/></Link>
+                return <Link to={'../movie/' + movie.id} ><MovieCard key={index} movie={movie}/></Link>
             })}
         </div>
     )

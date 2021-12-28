@@ -1,4 +1,5 @@
 import UserModel from '../models/user.js'
+import userModel from "../models/user.js";
 
 class UserController {
     // POST /api/user/login
@@ -12,6 +13,7 @@ class UserController {
         try {
             // Check for existing user
             const user = await UserModel.find({email: email}).limit(1)
+            console.log(await UserModel.db)
 
             if (user.length === 0)
                 return res.status(400).json({success: false, message: 'Incorrect username or password'})
@@ -42,7 +44,14 @@ class UserController {
 
     //GET /api/user/:id/view
     async view(req, res, next) {
-        return res.status(200).json({success: true, message: 'congrats'})
+        try {
+            const userInfo = await UserModel.find({_id: req.params.id});
+            if (userInfo[0])
+                return res.status(200).json({userInfo: userInfo[0]})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
     }
 }
 

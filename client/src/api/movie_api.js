@@ -82,7 +82,6 @@ const movieApi = {
         const url = '/movie/upload'
         return axiosClient.post(url, form)
     }
-
 }
 
 export default movieApi

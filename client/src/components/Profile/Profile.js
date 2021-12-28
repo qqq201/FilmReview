@@ -7,42 +7,16 @@ import {DatePicker} from "antd";
 
 
 
-const Profile = (props) => {
-    const info = [
-        {
-            id_name:'Adam',
-            dateofbirth: '1/1/2001',
-            sex: ' Nữ ',
-            email: 'adam@gmail.com',
-            city: 'Thành Phố Hồ Chí Minh',
-            mk :'********',
-            Score:'1000',
-            rank:'gold'
-        }
-    ]
-
-
-    let user = localStorage.getItem('User')
-
-    if (user)
-        user = JSON.parse(user)
-    else
-        user = {}
+const Profile = ({user}) => {
     let score_1;
 
-    score_1=Number( user.Point)
+    score_1=Number(user.Point)
 
 
     let score_level = 1000-score_1
     let sc= score_1 * 366 /1000
 
-    let mk = (user.password)
-
-    let mknew = "*"
-
     let date1= (user.dob)
-
-    let check=(user.role)
 
     return (
         <>

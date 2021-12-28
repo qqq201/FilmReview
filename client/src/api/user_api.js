@@ -1,10 +1,10 @@
 import axiosClient from './index'
 
 const userApi = {
-    /*get: (id) => {
-        const url = '/user/${id}'
+    get: (id) => {
+        const url = `/user/${id}/view`
         return axiosClient.get(url)
-    },*/
+    },
 
     login: (email, password) => {
         const url = '/user/login'
