@@ -12,6 +12,7 @@ router.use('/:id/editContent' , MovieController.editcontent);
 router.use('/:id/editGenres' , MovieController.editGenres);
 router.use('/:id/editActors' , MovieController.editActors);
 router.use('/:id/editDirector' , MovieController.editDirector);
+router.use('/upload' , MovieController.upload);
 router.use('/:id', MovieController.getInfo);
 
 

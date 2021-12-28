@@ -76,6 +76,11 @@ const movieApi = {
 
         return axiosClient.post(url, message)
 
+    },
+    upload: (form) => {
+
+        const url = '/movie/upload'
+        return axiosClient.post(url, form)
     }
 
 }

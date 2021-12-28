@@ -3,6 +3,7 @@ import FormData from 'form-data'
 import cloudinary from '../utils/cloudinary.js'
 
 
+
 class NewsController {
     // POST /api/movie
     async getNews(req, res, next) {

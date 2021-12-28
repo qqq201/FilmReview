@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import MovieModel from '../models/movie.js'
 import UserModel from '../models/user.js'
+import cloudinary from '../utils/cloudinary.js'
 
 class MovieController {
     // POST /api/movie
@@ -225,6 +226,39 @@ class MovieController {
             movie.director = req.body.director
             const test = await MovieModel.findByIdAndUpdate(movie._id, movie)
             return res.status(200).json({success:true})
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    async upload(req, res, next) {
+        try {
+
+            const uploadResponse = await cloudinary.uploader.upload(req.body.poster, function(error, result) {console.log(result, error); });
+            req.body.poster = uploadResponse.url
+
+             for( let i=0 ; i<req.body.photos.length ; i++){
+                 const uploadResponse = await cloudinary.uploader.upload(req.body.photos[i] , function(error, result) {console.log(result, error); });
+                 req.body.photos[i] = uploadResponse.url;
+             }
+
+
+             req.body.ratedScores =[]
+
+             req.body.rating = 0
+
+             req.body.reviews = []
+             req.body.favoriteCount =0
+
+             req.body.moderator = []
+             const movienew = new MovieModel(req.body)
+             await movienew.save()
+
+
+
+
+            return res.status(200).json({message: 'Success'})
         } catch (error) {
             console.log(error)
             res.status(500).json({success: false, message: 'Internal server error'})

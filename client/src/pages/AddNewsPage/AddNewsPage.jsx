@@ -156,9 +156,6 @@ const AddNewsPage = () => {
 
     const handleSubmit = async event => {
         event.preventDefault();
-        // alert(`Your state values: \n 
-        //         form: ${form.thumbnail} \n 
-        //         You can replace this alert with your process`);
         try {
             const response = await newsApi.upload(form)
             if (response !== undefined) {
