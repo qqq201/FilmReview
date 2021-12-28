@@ -1,10 +1,26 @@
 import mongoose from 'mongoose'
 
 const reviewSchema = new mongoose.Schema({
-    id: String,
-    movieId: String,
-    userId: String,
-    commentId: [String],
+
+    userId: {
+        type : String,
+        required: true
+    },
+
+    movieId: {
+        type : String,
+        required: true
+    },
+
+    content: {
+        type: String,
+        required: true
+    },
+
+    commentId: {
+        type: [String],
+        default: []
+    },
     numberOfComments: {
         type: Number,
         default: 0
@@ -17,9 +33,12 @@ const reviewSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    state: String,
-    time: {Date, default: Date.now}
-}, {collection: 'review'});
+    state: {
+        type :Boolean,
+        default: false
+    },
+
+}, { collection: 'review' });
 const reviewModel = mongoose.model('Review', reviewSchema);
 
 export default reviewModel;

@@ -77,7 +77,6 @@ const movieApi = {
         return axiosClient.post(url, message)
 
     }
-
 }
 
 export default movieApi
