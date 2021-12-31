@@ -37,6 +37,10 @@ const reviewSchema = new mongoose.Schema({
         type :Boolean,
         default: false
     },
+    time: {
+        type: Date,
+        default: Date.now
+    }
 
 }, { collection: 'review' });
 const reviewModel = mongoose.model('Review', reviewSchema);
