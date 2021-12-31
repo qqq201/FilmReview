@@ -65,40 +65,16 @@ const PostReview = () => {
     }, []);
 
 
-    // const reviews = [{
-
-    // }
-    // ]
-
-
     let count = 0;
 
     let displayComment = [];
     let commentList = [];
 
-    function displayCard() {
 
+    let user = null;
+    if (localStorage.getItem('User')) {
+        user = JSON.parse(localStorage.getItem('User'));
     }
-
-    // useEffect(()=>{
-    //     async function getData() {
-    //         const res = await axios.get("");
-    //         return res;
-    //
-    //     }
-    //     getData().then((res) => console.log(res));
-    // }, []);
-
-
-    // get data from the server
-    // const [reviews, setReviews] = useState([])
-    // useEffect(() => {
-    //     fetch('/api/reviews/')
-    //         .then(res => res.json())
-    //         .then(data => setReviews(data))
-    // }, [])
-
-    let user = JSON.parse(localStorage.getItem('User'))
 
     return (
         <section className="post-review">

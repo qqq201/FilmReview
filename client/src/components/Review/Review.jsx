@@ -26,14 +26,21 @@ const Review = () => {
         const review = {
             movie_id: movie_id,
             user_id: user._id,
-            thought:  though,
+            thought: though,
         }
         await review_api.addReview(review, movie_id);
     }
 
 
-    return (
-        <>
+    let User = null;
+    if (localStorage.getItem('User')) {
+        User = JSON.parse(localStorage.getItem('User'));
+    }
+
+    if (User === null) {
+        return (<></>)
+    } else {
+        return (
             <div className="box">
                 <p className="title-review">Reviews</p>
                 <hr id="hr-custom-review"/>
@@ -85,9 +92,10 @@ const Review = () => {
 
                     </>)}
             </div>
+        )
+            ;
+    }
 
-        </>
-    );
 }
 
 
