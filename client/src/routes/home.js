@@ -8,7 +8,7 @@ import ProfilePage from '../pages/ProfilePage/ProfilePage.js'
 import MovieRoute from './movie.js'
 import {Route, Routes} from 'react-router-dom'
 import SearchPage from "../pages/SearchPage/SearchPage";
-import PendingReviewPage from "../pages/PendingReviewspage/PendingReviewPage";
+import Addmovie from '../components/Addmovie/addmovie.js'
 
 const HomeRoute = () => {
     return (
@@ -19,10 +19,11 @@ const HomeRoute = () => {
                 <Route path='/ranking' element={<RankingPanel/>}/>
                 <Route path='/news' element={<NewsPage/>}/>
                 <Route path='/news/add-news' element={<AddNewsPage/>}/>
-                <Route path='/movie/add-movie' element={<Addmovie/>}/>
                 <Route path='/movie/:id/*' element={<MovieRoute/>}/>
                 <Route path='/profile/:id/*' element={<ProfilePage/>}/>
                 <Route path='/search/:q/*' element={<SearchPage/>}/>
+                <Route path='/movie/add-movie' element={<Addmovie/>}/>
+
             </Routes>
         </>
     )

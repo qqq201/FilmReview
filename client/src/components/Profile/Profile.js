@@ -4,9 +4,6 @@ import movieApi from "../../api/movie_api.js"
 import Favorite from './FavoriteList.jsx'
 import {DatePicker} from "antd";
 
-
-
-
 const Profile = ({user}) => {
     let score_1;
 

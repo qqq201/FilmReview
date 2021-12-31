@@ -7,7 +7,7 @@ const reviewApi = {
     },
 
     getListPendingReview: (movie_id) => {
-        const url = '/review/' + movie_id
+        const url = `/review/${movie_id}/pReview`
         return axiosClient.get(url)
     }
 }

@@ -8,3 +8,4 @@ router.use('/update', UserController.update);
 router.use('/:id/view', UserController.view);
 
 export default router;
+
