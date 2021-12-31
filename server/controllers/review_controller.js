@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import ReviewModel from '../models/review.js'
+import reviewModel from "../models/review.js";
 
 class ReviewController {
     //GET /api/review/:movie_id
@@ -90,6 +91,21 @@ class ReviewController {
                 console.log(test)
                 return res.status(200).json({success:true})
             }
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    async addReview(req, res) {
+        try {
+            const review = await reviewModel({
+                userId: req.body.user_id,
+                movieId: req.body.movie_id,
+                content: req.body.thought
+            });
+            await review.save();
+            return res.status(200).json({success:true})
         } catch (error) {
             console.log(error)
             res.status(500).json({success: false, message: 'Internal server error'})

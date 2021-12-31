@@ -11,6 +11,7 @@ const reviewApi = {
         return axiosClient.get(url)
     },
 
+
     approveReview: (review_id) => {
         const url = `/review/${review_id}/approve`
         return axiosClient.post(url)
@@ -19,6 +20,11 @@ const reviewApi = {
     denyReview: (review_id) => {
         const url = `/review/${review_id}/deny`
         return axiosClient.post(url)
+    },
+
+    addReview: (reviews, movied_id) => {
+        const url = '/review/' + movied_id + '/save'
+        return axiosClient.post(url, reviews)
     }
 }
 

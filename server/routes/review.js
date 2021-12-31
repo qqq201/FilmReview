@@ -6,7 +6,11 @@ const router = Router()
 router.use('/:review_id/approve', ReviewController.approveReview);
 router.use('/:review_id/deny', ReviewController.denyReview);
 // GET
+
+
+router.use('/:movie_id/save', ReviewController.addReview);
 router.use('/:movie_id/pReview', ReviewController.getListPendingReview);
 router.use('/:movie_id', ReviewController.getListReview);
+
 export default router
 

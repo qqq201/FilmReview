@@ -2,6 +2,7 @@ import './Review.css'
 import '../LoginForm/LoginForm.css'
 import {useState} from "react";
 import $ from 'jquery'
+import review_api from "../../api/review_api";
 
 
 const Review = () => {
@@ -17,10 +18,17 @@ const Review = () => {
 
     const [visiblePopup, setVisiblePopup] = useState(false);
 
-    function submit() {
-        const though = $("#input-review").val();
-        console.log(though);
+
+    async function submit() {
         setVisiblePopup(false);
+        const movie_id = window.location.href.substr(window.location.href.indexOf("movie/") + 6);
+        const though = $("#input-review").val();
+        const review = {
+            movie_id: movie_id,
+            user_id: user._id,
+            thought:  though,
+        }
+        await review_api.addReview(review, movie_id);
     }
 
 
