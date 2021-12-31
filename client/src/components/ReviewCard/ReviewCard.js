@@ -1,6 +1,9 @@
 import "./ReviewCard.css"
 import userApi from "../../api/user_api";
+import reviewApi from "../../api/review_api";
 import {useEffect, useState} from "react";
+import $ from "jquery";
+import movieApi from "../../api/movie_api";
 
 const ReviewCard = ({review}) => {
     let [info, setInfo] = useState({userName: "", userImage: "", userLevel: 1})
@@ -17,7 +20,9 @@ const ReviewCard = ({review}) => {
 
     useEffect(() => {
         fetch_userInfo()
-    }, [info.userName])
+    }, [info.userName, review.state])
+
+
 
     return (
         <div className="pReview-card">
@@ -31,8 +36,8 @@ const ReviewCard = ({review}) => {
                     <img className="pReview-rank" src={`/Imgs/${info.userLevel}.png`} alt="rank"/>
                 </div>
                 <div className="pReview-header-left">
-                    <div className="btn btn--green pReview-btn-accept" onClick={() => console.log(review.id)}>v</div>
-                    <div className="btn btn--red pReview-btn-refuse" onClick={() => console.log(review.id)}>x</div>
+                    <div className="btn btn--green pReview-btn-accept" onClick={() => reviewApi.approveReview(review.id)}>v</div>
+                    <div className="btn btn--red pReview-btn-refuse" onClick={() => reviewApi.denyReview(review.id)}>x</div>
                 </div>
             </div>
 

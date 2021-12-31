@@ -86,8 +86,8 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
                         <div className='mod-name'>{moderator.name}</div>
                         <div className='mod-assign'>
                             {moderator.email}
-                            <div class="add-mod">
-                                <input class="check-input"
+                            <div className="add-mod">
+                                <input className="check-input"
                                     type="checkbox"
                                     value=""
                                     checked={moderator.assigned}

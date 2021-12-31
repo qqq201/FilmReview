@@ -51,16 +51,16 @@ const MoviePage = () => {
         user = {}
 
     return (
-        <div className="movie-page">
+        <div className="movie-page" key={movie._id}>
             <MovieHeader movie={movie}/>
             {user &&( user.role === 'user' || user.role === 'moderator') &&
-            <MovieInfo movie={movie}/>}
+            <MovieInfo movie={movie} key={movie._id}/>}
 
             {user && user.role === 'admin'  &&
-            <MovieEditting movie={movie}/>}
+            <MovieEditting movie={movie} key={movie._id}/>}
 
             <div>
-                <Review/>
+                <Review />
             </div>
             <div>
                 <PostReview/>

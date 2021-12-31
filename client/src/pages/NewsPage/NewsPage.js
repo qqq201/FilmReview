@@ -40,8 +40,8 @@ const NewsPage = () => {
         <div className='gallery'>
             {/* user.role !=== undefind && user.role === 'admin &&  them moi button  */}
             <div className="news">
-                <div class="">
-                    {user.role === 'admin' && <button class="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>}
+                <div className="">
+                    {user.role === 'admin' && <button className="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>}
                 </div>
                 {state.map((news, index) => (
                     <NewsItem news={news} key={index} />

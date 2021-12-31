@@ -40,7 +40,7 @@ const Gallery = () => {
                 Bộ sưu tập
                 <span className="gallery-header-line"></span>
             </div>
-            {user.role === 'admin' && <button class="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>}
+            {user.role === 'admin' && <button className="add-news btn btn-lg bg-white" onClick={redirect}>Thêm mới</button>}
             <div className="catalogs">
                 {gallery.map((movie, index) => (
                     <MovieCatalog movie={movie} key={index}/>

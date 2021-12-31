@@ -22,13 +22,14 @@ const PendingReviewPage = () => {
 
     useEffect(() => {
         fetch_pReview()
-    }, [])
+    }, [reviews[0]])
 
     return (
         <div className = "list-pending-review">
             <h1 className="pReview-page-header">Review chưa được phê duyệt</h1>
             <div className="pReview-wrapper">
-                {reviews.map((review, index) => <ReviewCard key={index} index={index} review={review}/>)}
+                {reviews.length > 0 && reviews.map((review, index) => <ReviewCard key={index} index={index} review={review}/>)}
+                {reviews.length === 0 && <p className="no-preview">Không còn bài đánh giá nào trong danh sách!!!</p>}
             </div>
         </div>
     )

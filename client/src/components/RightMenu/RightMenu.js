@@ -10,7 +10,7 @@ const RightMenu = (props) => {
     return (
         <Dropdown className='right-menu'>
             <Dropdown.Toggle>
-                <div class='corner-avatar'>
+                <div className='corner-avatar'>
                     <img src={props.avatar} alt='avatar'/>
                 </div>
             </Dropdown.Toggle>

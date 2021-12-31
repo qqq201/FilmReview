@@ -26,17 +26,17 @@ const MovieHeader = (props) => {
                 <span className="movie-year">{props.movie.year}</span>
             </div>
             <div className="movie-poster"><img src={props.movie.poster} alt='poster' />
-                <div class="icon-love">
-                    <div class="btn" onClick={displayLove}><i class="icon-color fa fa-heart-o fa-2x"></i></div>
+                <div className="icon-love">
+                    <div className="btn" onClick={displayLove}><i className="icon-color fa fa-heart-o fa-2x"></i></div>
                 </div>
             </div>
             <div className="trailer">
                 <iframe
                     title={props.movie.title}
                     src={props.movie.trailer}
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
+                    allowFullScreen>
                 </iframe>
             </div>
 

@@ -23,7 +23,7 @@ const FavoriteList = (props) => {
     return (
         <div className='gallery'>
             <div className="gallery-header">
-                <i class="icon-favorite fa fa-heart-o" aria-hidden="true"></i>
+                <i className="icon-favorite fa fa-heart-o" aria-hidden="true"></i>
                 <span className="text"> Phim yêu thích </span>
             </div>
             <div className="container-fluid catalogs">

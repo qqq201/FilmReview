@@ -13,8 +13,9 @@ const  Favorite= (props) => {
                     <span className="galleries-header-line"></span>
                 </div>
                 <div className="galleries">
-                    {movies.map(movie => (
+                    {movies.map((movie, index) => (
                         <MovieCatalog
+                            key = {index}
                             movie={movie}
                             role={role}
                             isAuthen={isAuthen}

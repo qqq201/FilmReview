@@ -20,3 +20,10 @@
     padding: 0 1.5%;
     margin: 0 -1%;
 }
+
+.no-preview{
+    color: #333;
+    padding-top: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+}

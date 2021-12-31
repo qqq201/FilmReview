@@ -19,7 +19,7 @@ const Profile = ({user}) => {
         <>
             <section className="info" >
                 <form className="row">
-                    <div class="col-sm-6">
+                    <div className="col-sm-6">
                         <div>
                             <div className="mb-2">
                                 <div className="row">
@@ -34,7 +34,7 @@ const Profile = ({user}) => {
                         </div>
                     </div>
 
-                    { (user.role === 'user') && <div  class="col-sm-6" >
+                    { (user.role === 'user') && <div  className="col-sm-6" >
                         <div className="check">
                             <div className="mb-2">
                                 <div className="row">

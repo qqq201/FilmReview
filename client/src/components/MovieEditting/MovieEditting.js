@@ -6,17 +6,6 @@ import $ from 'jquery'
 import movieApi from '../../api/movie_api.js'
 
 const MovieEditting = (props) => {
-    const movie = {
-        content: "A family saga with a supernatural twist, set in a German town, where the disappearance of two young children exposes the relationships among four families.",
-        genres: "Mystery",
-        actors: "Oliver Masucci, Karoline Eichhorn, Jördis Triebel, Louis Hofmann, Maja Schöne.",
-        directors: "Baran bo Odar",
-        photos: [
-            "https://icdn3.digitaltrends.com/image/dark-tv-netflix-1200x630-c-ar1.91.jpg",
-            "https://icdn3.digitaltrends.com/image/dark-tv-netflix-1200x630-c-ar1.91.jpg",
-            "https://icdn3.digitaltrends.com/image/dark-tv-netflix-1200x630-c-ar1.91.jpg"
-        ]
-    }
     const [visiblePopup1, setVisiblePopup1] = useState(false);
 
     function submit() {
@@ -105,8 +94,8 @@ const MovieEditting = (props) => {
                     <div className="mb-1">
                         <h4>Hình ảnh</h4>
                         <div className='line'/>
-                        {props.movie.photos.map(photo => (
-                            <div class='photo'>
+                        {props.movie.photos.map((photo, index) => (
+                            <div className='photo' key = {index}>
                                 <img src={photo} alt='movie capture'/>
                             </div>
                         ))}

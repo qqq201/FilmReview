@@ -52,7 +52,6 @@ const CardReview = (props) => {
                          alt="avatar"/>
                     <div className="mt-5 mb-2 ml-5 text-black" id="">{name}</div>
                     <date className="text-black">{date}</date>
-
                 </div>
 
                 <div className="card-body text-black">{message}</div>

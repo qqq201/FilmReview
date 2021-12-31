@@ -23,7 +23,6 @@ const HomeRoute = () => {
                 <Route path='/profile/:id/*' element={<ProfilePage/>}/>
                 <Route path='/search/:q/*' element={<SearchPage/>}/>
                 <Route path='/movie/add-movie' element={<Addmovie/>}/>
-
             </Routes>
         </>
     )

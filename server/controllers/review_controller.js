@@ -60,6 +60,41 @@ class ReviewController {
             res.status(500).json({success: false, message: 'Internal server error'})
         }
     }
+
+    //POST /api/review/:review_id/approve
+    async approveReview (req, res, next){
+        try {
+            console.log(req.params.review_id)
+            var review = await ReviewModel.find({_id: req.params.review_id})
+            console.log(review)
+            if (review[0]) {
+                console.log(review[0])
+                review[0].state = true
+                const test = await ReviewModel.findByIdAndUpdate(review[0]._id, review[0])
+                console.log(test)
+                return res.status(200).json({success:true})
+            }
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
+
+    //POST /api/review/:review_id/deny
+    async denyReview (req, res, next){
+        try {
+            var review = await ReviewModel.find({_id: req.params.review_id})
+            if (review[0]) {
+                console.log(review[0])
+                const test = await ReviewModel.findByIdAndDelete(review[0]._id)
+                console.log(test)
+                return res.status(200).json({success:true})
+            }
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
 }
 
 export default new ReviewController()

@@ -193,6 +193,7 @@ class MovieController {
             res.status(500).json({success: false, message: 'Internal server error'})
         }
     }
+
     async editGenres (req, res, next){
         try {
             var movie = await MovieModel.find({_id: req.params.id})
