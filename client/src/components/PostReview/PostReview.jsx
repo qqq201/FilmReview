@@ -82,7 +82,7 @@ const PostReview = () => {
             {user && user.role === 'moderator' && <Link to={"pReview"}>
                 <div className="pReview-btn btn btn--green">Phê duyệt</div>
             </Link>}
-            <div className="container brown-color">
+            <div className="container brown-color mw-1155">
 
                 {
                     reviews.map((e) => {

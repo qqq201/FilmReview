@@ -45,19 +45,14 @@ const MoviePage = () => {
 
     var user = localStorage.getItem('User')
 
-    if (user)
-        user = JSON.parse(user)
-    else
-        user = {}
-
     return (
         <div className="movie-page" key={movie._id}>
             <MovieHeader movie={movie}/>
-            {user &&( user.role === 'user' || user.role === 'moderator') &&
-            <MovieInfo movie={movie} key={movie._id}/>}
+            {(user === "" || JSON.parse(user).role === 'user' || JSON.parse(user).role === 'moderator') &&
+            <MovieInfo movie={movie}/>}
 
-            {user && user.role === 'admin'  &&
-            <MovieEditting movie={movie} key={movie._id}/>}
+            {user.role === 'admin'  &&
+            <MovieEditting movie={movie}/>}
 
             <div>
                 <Review />

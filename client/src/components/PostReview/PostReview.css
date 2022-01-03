@@ -6,7 +6,6 @@
 }
 
 .post-review{
-    background-color: #e8edf1;
     position: relative;
 }
 .image-round {
@@ -57,4 +56,8 @@
 }
 .brown-color {
     background: #E9EDF1;
+}
+
+.mw-1155{
+    max-width: 1155px !important;
 }
