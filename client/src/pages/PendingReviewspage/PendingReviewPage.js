@@ -2,8 +2,6 @@ import './PendingReviewPage.css'
 import ReviewCard  from "../../components/ReviewCard/ReviewCard.js"
 import {useEffect, useState} from "react";
 import reviewApi from "../../api/review_api";
-import movieApi from "../../api/movie_api";
-import userApi from "../../api/user_api";
 
 const PendingReviewPage = () => {
     let movie_id = window.location.href.substr(window.location.href.indexOf("movie/") + 6);

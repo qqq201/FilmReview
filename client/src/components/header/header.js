@@ -32,10 +32,9 @@ function removeVietnameseTones(str) {
 const Header = () => {
     function handleNavigatePage(e) {
         if (e.keyCode === 13) {
-            window.location.href =  "http://localhost:3000/" + "search/" + removeVietnameseTones(document.querySelector(".nav-search-bar").value)
+            window.location.href =  "http://localhost:3000/search/" + removeVietnameseTones(document.querySelector(".nav-search-bar").value)
         }
     }
-
 
     let user = localStorage.getItem('User')
 

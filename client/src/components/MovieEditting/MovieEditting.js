@@ -29,7 +29,7 @@ const MovieEditting = (props) => {
         const though3 = $("#actors").val();
         console.log(though3);
         setVisiblePopup3(false);
-        movieApi. editActors(though3, props.movie._id)
+        movieApi.editActors(though3, props.movie._id)
     }
 
     const [visiblePopup4, setVisiblePopup4] = useState(false);

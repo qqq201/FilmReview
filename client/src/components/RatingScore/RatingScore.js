@@ -37,8 +37,8 @@ const RatingScore = (props) => {
             user_rate: score
         })
 
-    }, [props.movie])
-    
+    }, [props.movie, user._id])
+
     return (
         <div className="rating-container">
 			<RateModal isOpen={state.is_rating} movie_id={props.movie._id} user_id={user._id || ''} user_rated={state.user_rate} setState={setState}/>

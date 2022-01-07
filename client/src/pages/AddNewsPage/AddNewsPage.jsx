@@ -1,7 +1,6 @@
 import "./AddNewsPage.css"
 import React, {useState} from 'react'
-import { Upload, Modal } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+//import { Upload, Modal } from 'antd';
 import {useNavigate} from "react-router-dom";
 import newsApi from '../../api/news_api.js'
 
@@ -20,21 +19,6 @@ const AddNewsPage = () => {
         articleLink: '',
         time : ''
     })
-
-    function getBase64_2(file) {
-        let document = "";
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            document = reader.result;
-        };
-        reader.onerror = function (error) {
-            console.log('Error: ', error);
-        };
-
-        return document;
-    }
-
     function getBase64(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -52,84 +36,12 @@ const AddNewsPage = () => {
             setForm(form)
         }
     };
-    
+
 
     // This function will be triggered when the "Remove This Image" button is clicked
     const removeSelectedImage = () => {
         setSelectedImage();
     };
-
-    // ttttttttttttttttttttttttttttttttttt
-    function getBase64(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = error => reject(error);
-        });
-    }
-    class PicturesWall extends React.Component {
-        state = {
-            previewVisible: false,
-            previewImage: '',
-            previewTitle: '',
-            fileList: [
-
-            ],
-        };
-
-        handleCancel = () => this.setState({ previewVisible: false });
-
-
-        //Image Preview
-        handlePreview = async file => {
-            if (!file.url && !file.preview) {
-                file.preview = await getBase64(file.originFileObj);
-            }
-
-            this.setState({
-                previewImage: file.url || file.preview,
-                previewVisible: true,
-                previewTitle: file.name || file.url.substring(file.url.lastIndexOf('/') + 1),
-            });
-        };
-
-        handleChange = ({ fileList }) => this.setState({ fileList });
-
-        render() {
-            const { previewVisible, previewImage, fileList, previewTitle } = this.state;
-            const uploadButton = (
-                <div>
-                    <PlusOutlined />
-                    <div style={{ marginTop: 8 }}>Upload</div>
-                </div>
-            );
-            return (
-                <>
-                    <Upload
-                        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                        listType="picture-card"
-                        fileList={fileList}
-                        onPreview={this.handlePreview}
-                        onChange={this.handleChange}
-                    >
-                        {fileList.length >= 8 ? null : uploadButton}
-                    </Upload>
-                    <Modal
-                        visible={previewVisible}
-                        title={previewTitle}
-                        footer={null}
-                        onCancel={this.handleCancel}
-                    >
-
-                        <img  alt="example" style={{ width: '100%' }} src={previewImage} />
-                    </Modal>
-                </>
-            );
-        }
-    }
-
-    
 
     const handleTitleChange = event => {
         form.title = event.target.value
@@ -139,12 +51,7 @@ const AddNewsPage = () => {
         form.content = event.target.value
         setForm(form)
     };
-    const handleThumbnailChange = event => {
-        if (event.target.files && event.target.files.length > 0) {
-            form.thumbnail = event.target.files[0]
-            setForm(form)
-        }
-    };
+
     const handleArticleLinkChange = event => {
         form.articleLink = event.target.value
         setForm(form)
@@ -216,10 +123,7 @@ const AddNewsPage = () => {
 
                             {selectedImage && (
                                 <div className="preview">
-
-                                    <img  className="image" src={URL.createObjectURL(selectedImage)}  >
-
-                                    </img>
+                                    <img alt='preview' className="image" src={URL.createObjectURL(selectedImage)}/>
                                     <button onClick={removeSelectedImage} className="button">
                                         <span aria-hidden="true" className="cancel-btn-custom">&times;</span>
                                     </button>

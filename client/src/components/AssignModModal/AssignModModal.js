@@ -16,8 +16,12 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
             try {
                 const response = await movieApi.getModerators(movie_id)
                 if (response.moderators){
-                    state.moderators = response.moderators
-                    setState(state)
+                    const newstate = {
+                        moderators: response.moderators,
+                        searchMod: ""
+                    }
+
+                    setState(newstate)
                 }
             } catch (error){
                 console.log('Error', error)
@@ -25,7 +29,7 @@ const AssignModModal = ({ isOpen, setOpenModal, movie_id }) => {
         }
 
         get_moderators()
-    }, [])
+    }, [movie_id])
 
     const assign = (index) => {
         state.moderators[index].assigned = !state.moderators[index].assigned

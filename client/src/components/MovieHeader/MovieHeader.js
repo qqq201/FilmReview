@@ -1,13 +1,10 @@
 import './MovieHeader.css'
 import RatingScore from '../RatingScore/RatingScore.js'
 import { useState } from 'react'
-import { set } from 'mongoose'
 import $ from 'jquery'
 
 const MovieHeader = (props) => {
     const [isLove, setLove] = useState(false);
-
-    let firstTime = true;
 
     function displayLove() {
         if (isLove === false) {

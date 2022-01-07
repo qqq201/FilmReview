@@ -18,7 +18,7 @@ const ModGallery = (props) => {
         }
 
         fetch_gallery()
-    }, [])
+    }, [props.mod_id])
 
     return (
         <div className='gallery'>

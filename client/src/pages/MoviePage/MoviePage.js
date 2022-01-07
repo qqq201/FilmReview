@@ -41,7 +41,7 @@ const MoviePage = () => {
         }
 
         fetch_movie()
-    }, [])
+    }, [movie_id])
 
     var user = localStorage.getItem('User')
 

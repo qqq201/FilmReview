@@ -6,8 +6,6 @@ import review_api from "../../api/review_api";
 
 
 const Review = () => {
-
-
     var user = localStorage.getItem('User')
 
     if (user)
@@ -93,7 +91,6 @@ const Review = () => {
                     </>)}
             </div>
         )
-            ;
     }
 
 }

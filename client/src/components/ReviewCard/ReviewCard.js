@@ -2,8 +2,6 @@ import "./ReviewCard.css"
 import userApi from "../../api/user_api";
 import reviewApi from "../../api/review_api";
 import {useEffect, useState} from "react";
-import $ from "jquery";
-import movieApi from "../../api/movie_api";
 
 const ReviewCard = ({review}) => {
     let [info, setInfo] = useState({userName: "", userImage: "", userLevel: 1})
@@ -49,4 +47,3 @@ const ReviewCard = ({review}) => {
 }
 
 export default ReviewCard
-

@@ -1,13 +1,10 @@
-
 import './add_movie.css'
-// import "bootstrap/dist/css/bootstrap.min.css";
 import React, {useState} from 'react'
 import { Upload, Modal } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import newsApi from "../../api/news_api";
 import {useNavigate} from "react-router-dom";
 import movieApi from "../../api/movie_api";
-// import "antd/dist/antd.css";
+
 function getBase64(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -16,6 +13,7 @@ function getBase64(file) {
         reader.onerror = error => reject(error);
     });
 }
+
 const PicturesWall = (props) => {
     const [state, setState] = useState({
         previewVisible: false,
@@ -243,9 +241,7 @@ const Addmovie = (props) => {
                             {selectedImage && (
                                 <div className="preview">
 
-                                    <img  className="image" src={URL.createObjectURL(selectedImage)}  >
-
-                                    </img>
+                                    <img  alt='preview' className="image" src={URL.createObjectURL(selectedImage)}/>
                                     <button onClick={removeSelectedImage} className="button">
                                         <span aria-hidden="true" className="cancel-btn-custom">&times;</span>
                                     </button>
