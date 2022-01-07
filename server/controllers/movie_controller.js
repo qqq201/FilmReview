@@ -235,29 +235,20 @@ class MovieController {
 
     async upload(req, res, next) {
         try {
-
+            console.log(req.body)
             const uploadResponse = await cloudinary.uploader.upload(req.body.poster, function(error, result) {console.log(result, error); });
             req.body.poster = uploadResponse.url
-
              for( let i=0 ; i<req.body.photos.length ; i++){
                  const uploadResponse = await cloudinary.uploader.upload(req.body.photos[i] , function(error, result) {console.log(result, error); });
                  req.body.photos[i] = uploadResponse.url;
              }
-
-
              req.body.ratedScores =[]
-
              req.body.rating = 0
-
              req.body.reviews = []
              req.body.favoriteCount =0
-
              req.body.moderator = []
              const movienew = new MovieModel(req.body)
              await movienew.save()
-
-
-
 
             return res.status(200).json({message: 'Success'})
         } catch (error) {
