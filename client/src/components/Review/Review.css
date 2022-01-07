@@ -74,6 +74,8 @@ html {
     background: white;
     border-radius: 2rem;
     left: 12rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     z-index: 9999;
 }
 
