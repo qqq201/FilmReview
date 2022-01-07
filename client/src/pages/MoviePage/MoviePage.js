@@ -48,10 +48,10 @@ const MoviePage = () => {
     return (
         <div className="movie-page" key={movie._id}>
             <MovieHeader movie={movie}/>
-            {(user === "" || JSON.parse(user).role === 'user' || JSON.parse(user).role === 'moderator') &&
+            {(user === '' || JSON.parse(user).role === 'user' || JSON.parse(user).role === 'moderator') &&
             <MovieInfo movie={movie}/>}
 
-            {user.role === 'admin'  &&
+            {user !== '' && JSON.parse(user).role === 'admin' &&
             <MovieEditting movie={movie}/>}
 
             <div>

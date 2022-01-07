@@ -20,7 +20,7 @@ const PendingReviewPage = () => {
 
     useEffect(() => {
         fetch_pReview()
-    }, [reviews[0]])
+    }, [reviews])
 
     return (
         <div className = "list-pending-review">
