@@ -1,7 +1,11 @@
 .prompt {
     position: absolute;
-    top: 20em;
-    left: 35rem;
+
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 35% !important;
     z-index: 9999;
 }
