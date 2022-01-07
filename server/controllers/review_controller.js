@@ -1,12 +1,11 @@
 import mongoose from 'mongoose'
 import ReviewModel from '../models/review.js'
-import reviewModel from "../models/review.js";
+import UserModel from '../models/user.js'
 
 class ReviewController {
     //GET /api/review/:movie_id
     async getListReview(req, res, next){
         try {
-            console.log(req.params.movie_id, "review")
             const reviews = await ReviewModel.find({movieId: req.params.movie_id, state: true});
             let listReview = []
             reviews.forEach((review) => {
@@ -36,7 +35,6 @@ class ReviewController {
     //GET /api/review/:movie_id/pReview
     async getListPendingReview(req, res, next){
         try {
-            console.log(req.params.movie_id, "pending review")
             const reviews = await ReviewModel.find({movieId: req.params.movie_id, state: false });
             let listReview = []
             reviews.forEach((review) => {
@@ -65,14 +63,23 @@ class ReviewController {
     //POST /api/review/:review_id/approve
     async approveReview (req, res, next){
         try {
-            console.log(req.params.review_id)
             var review = await ReviewModel.find({_id: req.params.review_id})
-            console.log(review)
             if (review[0]) {
-                console.log(review[0])
                 review[0].state = true
+                // upgrade user
+                var user = await UserModel.find({_id: review[0].userId})
+                user = user[0]
+                if (user){
+                    user.Point += 5
+                    if (user.Point > 1000){
+                        user.level++
+                        user.Point -= 1000
+                    }
+
+                    const check = await UserModel.findByIdAndUpdate(user._id, user)
+                }
+
                 const test = await ReviewModel.findByIdAndUpdate(review[0]._id, review[0])
-                console.log(test)
                 return res.status(200).json({success:true})
             }
         } catch (error) {
@@ -86,9 +93,20 @@ class ReviewController {
         try {
             var review = await ReviewModel.find({_id: req.params.review_id})
             if (review[0]) {
-                console.log(review[0])
+                // downgrade user
+                var user = await UserModel.find({_id: review[0].userId})
+                user = user[0]
+                if (user){
+                    user.Point -= 5
+                    if (user.Point < 0){
+                        user.level--
+                        user.Point += 1000
+                    }
+
+                    const check = await UserModel.findByIdAndUpdate(user._id, user)
+                }
+
                 const test = await ReviewModel.findByIdAndDelete(review[0]._id)
-                console.log(test)
                 return res.status(200).json({success:true})
             }
         } catch (error) {
@@ -99,7 +117,7 @@ class ReviewController {
 
     async addReview(req, res) {
         try {
-            const review = await reviewModel({
+            const review = await ReviewModel({
                 userId: req.body.user_id,
                 movieId: req.body.movie_id,
                 content: req.body.thought

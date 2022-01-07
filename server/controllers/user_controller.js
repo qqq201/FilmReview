@@ -1,5 +1,4 @@
 import UserModel from '../models/user.js'
-import userModel from "../models/user.js";
 
 class UserController {
     // POST /api/user/login
