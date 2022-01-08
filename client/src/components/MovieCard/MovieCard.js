@@ -23,6 +23,7 @@ const MovieCard = ({movie}) => {
                     <span> / 100</span>
                 </div>
                 <p className="search-card-genres">{movie.genres}</p>
+                {console.log(movie)}
                 <p className="search-card-content line-clamp-1"><b>Nội dung: </b>{movie.content}</p>
                 <p className="search-card-actor"><b>Diễn viên: </b>{movie.actors}</p>
             </div>

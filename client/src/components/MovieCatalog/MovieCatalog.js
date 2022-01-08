@@ -20,9 +20,9 @@ const MovieCatalog = (props) => {
 
             <img src={props.movie.poster} alt="poster"/>
             <div className="item-info">
-                <h2 className="item-name">{props.movie.title}</h2>
+                <h2 className="item-name line-clamp-2">{props.movie.title}</h2>
                 <p className="item-year">{props.movie.year}</p>
-                <p className="item-topic">{props.movie.genres}</p>
+                <p className="item-topic line-clamp-2">{props.movie.genres}</p>
                 <div className="item-rating">
                     <IconContext.Provider value={{ color: "#D89E2D" }}>
                     <AiFillStar/>

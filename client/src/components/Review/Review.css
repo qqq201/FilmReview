@@ -114,8 +114,8 @@ html {
 }
 
 .icon-review {
-    position: relative;
-    left: 48rem;
+    position: absolute;
+    right: 2rem;
     top: 1rem;
 }
 
