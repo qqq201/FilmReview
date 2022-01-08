@@ -72,7 +72,7 @@ const PostReview = () => {
     if (localStorage.getItem('User')) {
         user = JSON.parse(localStorage.getItem('User'));
     }
-
+    console.log(user)
     return (
         <section className="post-review">
             <div className="num-reviews text-black m-5 "> {reviews.length} reviews</div>

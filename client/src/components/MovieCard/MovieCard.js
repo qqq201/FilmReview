@@ -1,16 +1,28 @@
 import "./MovieCard.css"
 
 import AssignModModal from "../AssignModModal/AssignModModal";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {IconContext} from "react-icons";
 import {AiFillStar} from "react-icons/ai";
+import movieApi from "../../api/movie_api";
 
-const MovieCard = ({movie}) => {
-    const [modalOpen, setModalOpen] = useState(false);
+const MovieCard = ({movieID}) => {
+    const [movie, setMovie] = useState({})
+    useEffect(() => {
+            const fetch_movie = async () => {
+                try {
+                    const response = await movieApi.getInfo(movieID)
+                    if (response.movie){
+                        setMovie(response.movie)
+                    }
+                } catch (error){
+                    console.log('Error', error)
+                }}
+            fetch_movie()
+    }, [])
 
     return (
         <div className="search-card">
-            <AssignModModal isOpen={modalOpen} setOpenModal={setModalOpen} movie_id={movie.id}/>
             <img src={movie.poster} alt="poster"/>
             <div className="search-card-info">
                 <span className="search-card-name">{movie.title}</span>
