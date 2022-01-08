@@ -125,9 +125,9 @@ const Addmovie = (props) => {
         photos : [],
     })
 
+
     const handleTrailerChange = event => {
         form.trailer = event.target.value
-
         setForm(form)
     };
     const handleTitleChange = event => {
@@ -146,6 +146,10 @@ const Addmovie = (props) => {
         form.director = event.target.value
         setForm(form)
     };
+    const handleActorChange = event => {
+        form.actors = event.target.value
+        setForm(form)
+    };
     const handleContentChange = event => {
         form.content = event.target.value
         setForm(form)
@@ -154,8 +158,6 @@ const Addmovie = (props) => {
         form.photos= photo
         setForm(form)
     };
-
-
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -216,6 +218,13 @@ const Addmovie = (props) => {
                             <div className="line"></div>
                         </div>
                         <input type="text" className="form-control" name="name_direct" placeholder="Tên đạo diễn" onChange={handleDirectorChange}/>
+                    </div>
+                    <div className="mb-1">
+                        <div className="title">
+                            <h2 className="text-title">Diễn viên</h2>
+                            <div className="line"></div>
+                        </div>
+                        <input type="text" className="form-control" name="name_actor" placeholder="Tên diễn viên" onChange={handleActorChange}/>
                     </div>
                     <div className="mb-1">
                         <div className="title">

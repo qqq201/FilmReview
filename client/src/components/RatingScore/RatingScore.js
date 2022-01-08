@@ -41,7 +41,7 @@ const RatingScore = (props) => {
 
     return (
         <div className="rating-container">
-			<RateModal isOpen={state.is_rating} movie_id={props.movie._id} user_id={user._id || ''} user_rated={state.user_rate} setState={setState}/>
+			<RateModal isOpen={state.is_rating} movie_id={props.movie._id} user_id={user._id || ''} public_rate={state.public_rate} user_rated={state.user_rate} setState={setState}/>
 
             <div className="rating-title">Điểm đánh giá</div>
             <div className="public-score-section">
