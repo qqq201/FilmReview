@@ -49,7 +49,6 @@ const SignupForm = () => {
 
     function changeNext() {
         $(".uniqueSubmit-Password").click();
-        console.log(data);
     }
 
     return (

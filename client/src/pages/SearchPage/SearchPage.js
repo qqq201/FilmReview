@@ -52,7 +52,7 @@ const SearchPage = () => {
     }, [])
 
     let  listResults = gallery.filter((movie) => removeVietnameseTones(movie.title).toLowerCase().indexOf(keyword) !== -1)
-
+    const [movieInfo, setMovieInfo] = useState({})
     return (
         <div className = "list-search-results">
             {listResults.map((movie, index) => {
@@ -60,15 +60,13 @@ const SearchPage = () => {
                     try {
                         const response = await movieApi.getInfo(movie.id)
                         if (response.movie){
-                            movie = response.movie
-                            console.log(movie)
+                            setMovieInfo(response.movie)
                         }
-
                     } catch (error){
                         console.log('Error', error)
                     }}
                 fetch_movie()
-                return <Link to={'../movie/' + movie.id} ><MovieCard key={index} movie={movie}/></Link>
+                return <Link to={'../movie/' + movie.id} ><MovieCard key={index} movie={movieInfo}/></Link>
             })}
         </div>
     )

@@ -18,7 +18,7 @@ const Reply = (props) => {
                  src={avatar}
                  alt="avatar"/>
             <div className="col-9">
-                <textarea id={idUser + "textArea"} className="col-12 mr-5 d-inline-block text-black text-center btn--border-radius"
+                <textarea id={idUser + "textArea"} className="col-12 mr-5 d-inline-block text-black btn--border-radius"
                           placeholder="Bình luận ... " />
             </div>
 

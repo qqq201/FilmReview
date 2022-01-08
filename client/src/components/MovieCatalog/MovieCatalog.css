@@ -45,6 +45,7 @@
 
 .item-topic {
     font-size: 14px;
+    height: 42px;
 }
 
 
@@ -88,9 +89,12 @@
 }
 
 .btn-assign-mod {
-	width: 25%;
-    height: 100%;
-	background-color: #2D3E50;
+    background-color: #2D3E50;
 	color: white;
 	border-radius: 50px;
+    position: absolute;
+    right: 2%;
+    width: 30px;
+    height: 25px;
+    bottom: 15px;
 }

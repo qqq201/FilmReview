@@ -54,8 +54,6 @@ const PostReview = () => {
                 ]
             });
         }
-        console.log(r);
-
         setReviews(r);
     }
 

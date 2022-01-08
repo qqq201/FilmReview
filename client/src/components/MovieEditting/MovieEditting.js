@@ -49,10 +49,7 @@ const MovieEditting = (props) => {
 
     return (
         <>
-
-
-
-            <section className="info_ediiting" >
+            <section className="info_ediiting edit-hover" >
                 <form className="row">
 
                     <div className="mb-1">
@@ -197,8 +194,6 @@ const MovieEditting = (props) => {
                     </div>
 
                 </>) : ( <> </>)}
-
-
             </section>
 
         </>

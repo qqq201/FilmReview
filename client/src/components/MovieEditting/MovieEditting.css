@@ -71,7 +71,8 @@ info_ediiting{
     top: -18rem;
     background: white;
     border-radius: 2rem;
-    left: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 9999;
 }
 .box_text_edit {
@@ -95,5 +96,10 @@ info_ediiting{
 }
 .button_editting{
     border-radius: 5px;
+}
 
+.edit-hover p.mb-1:hover{
+    cursor: pointer;
+    border: #ccc 1px solid;
+    box-sizing: content-box;
 }
