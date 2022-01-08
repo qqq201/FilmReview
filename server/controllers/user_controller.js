@@ -12,7 +12,6 @@ class UserController {
         try {
             // Check for existing user
             const user = await UserModel.find({email: email}).limit(1)
-            console.log(await UserModel.db)
 
             if (user.length === 0)
                 return res.status(400).json({success: false, message: 'Incorrect username or password'})

@@ -6,7 +6,7 @@ import RangeSlider from 'react-bootstrap-range-slider'
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import movieApi from "../../api/movie_api.js"
 
-const RateModal = ({isOpen, movie_id, user_id, user_rated, setState}) => {
+const RateModal = ({isOpen, movie_id, public_rate, user_id, user_rated, setState}) => {
     const [score, setScore] = useState(user_rated? user_rated : 0)
 
     const rate = async () => {
@@ -29,7 +29,8 @@ const RateModal = ({isOpen, movie_id, user_id, user_rated, setState}) => {
         <Modal show={isOpen} onHide={() =>
             setState({
                 is_rating: false,
-                user_rate: user_rated
+                user_rate: user_rated,
+                public_rate: public_rate
             })}>
 
             <Modal.Header>
@@ -37,7 +38,8 @@ const RateModal = ({isOpen, movie_id, user_id, user_rated, setState}) => {
                     <button onClick={() =>
                         setState({
                             is_rating: false,
-                            user_rate: user_rated
+                            user_rate: user_rated,
+                            public_rate: public_rate
                         })}>
                     x
                     </button>
